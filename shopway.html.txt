@@ -59,4 +59,29 @@
                     <button class="wishlist-btn" onclick="addToWishlist('Smart Watch')">❤ Wishlist</button>
                 </div>
             </div>
+<div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPzO2aUkPx4r1SIu1Q6_GPnQu-XQG-1F8Pow&s" alt="Bluetooth Speaker" height="200" width="200">
+                <h3>Bluetooth Speaker</h3>
+                <p>₹1,299</p>
+                <div class="product-actions">
+                    <button class="btn" onclick="addToCart('Bluetooth Speaker')">Add to Cart</button>
+                    <button class="wishlist-btn" onclick="addToWishlist('Bluetooth Speaker')">❤ Wishlist</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Section -->
+    <section id="delivery" class="section">
+        <h2>Single-Day Delivery for Multiple Items</h2>
+        <p>Order multiple items and get them delivered to your doorstep within a day!</p>
+        <a href="#products" class="btn secondary-btn">🚚 Get Single-Day Delivery</a>
+    </section>
+
+    <!-- Chat with Retailer Section -->
+    <section id="chat" class="section">
+        <h2>Chat with Retailer</h2>
+        <p>Chat with sellers directly and negotiate your price in real-time!</p>
+        <a href="Chat.html" class="btn secondary-btn">💬 Start Chat</a>
+    </section>
 
