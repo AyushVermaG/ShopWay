@@ -208,3 +208,49 @@ footer.light {
     cursor: pointer;
     border-radius: 50%;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.dashboard-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: footerwrap;
+}
+
+.dashboard-content {
+    margin-top: 2rem;
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: left;
+    color: #f0f0f0;
+}
+
+body.light .dashboard-content {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.dashboard-content h3 {
+    margin-top: 0;
+}
+
+.dashboard-content input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: none;
+}
+
+.dashboard-content button {
+    margin-top: 1rem;
+}
