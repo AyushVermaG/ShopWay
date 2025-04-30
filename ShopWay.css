@@ -96,6 +96,59 @@ html {
   }
 
     /* Hero Section */
+    .hero-slider {
+        position: relative;
+        height: 60vh;
+        overflow: hidden;
+      }
+      
+      .hero-slide {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 2rem;
+        transition: all 1s ease;
+        opacity: 0;
+        z-index: 0;
+      }
+      
+      .hero-slide.active {
+        left: 0;
+        opacity: 1;
+        z-index: 1;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .hero-slide:nth-child(1) {
+        background: url('banner.jpg') no-repeat center center/cover;
+      }
+      
+      .hero-slide:nth-child(2) {
+        background: url('delivery.jpg') no-repeat center center/cover;
+      }
+      
+      .hero-slide:nth-child(3) {
+        background: url('deals.jpg') no-repeat center center/cover;
+      }
+      
     .hero-section {
         display: flex;
         justify-content: center;
@@ -224,13 +277,56 @@ html {
         margin: 0.5rem 0;
     }
     
-     .footer{
+    .footer {
         background-color: #1a1a1a;
-        color: white;
+        color: #f0f0f0;
+        padding: 2rem 1rem;
         text-align: center;
-        padding: 1rem;
-        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border-top: 1px solid #333;
+        font-size: 0.95rem;
     }
+    
+    .footer .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    
+    .footer .footer-links a {
+        color: #00bcd4;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .footer .footer-links a:hover {
+        color: #e64500;
+    }
+    
+    .footer .footer-bottom {
+        font-size: 0.85rem;
+        color: #aaa;
+    }
+    
+    .footer .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .footer .social-icons a {
+        color: #f5f5f5;
+        transition: color 0.3s;
+    }
+    
+    .footer .social-icons a:hover {
+        color: #00bcd4;
+    }
+    
 
       /* Light Mode */
   body.light {

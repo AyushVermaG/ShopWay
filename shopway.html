@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopWay - Your Smart Shopping Destination</title>
     <link rel="stylesheet" href="ShopWay.css">
+
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body class="dark">
 
@@ -28,14 +32,16 @@
         </nav>
     </header>
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-content">
+    <section class="hero-slider">
+        <div class="hero-slide active">
+          <div class="hero-content">
             <h1>Welcome to ShopWay</h1>
             <p>Your Smart Shopping Companion for Great Deals and Fast Delivery</p>
             <a href="#products" class="btn primary-btn">🛍 Shop Now</a>
-        </div>     
+        </div>
     </section>
-     <!-- Featured Products -->
+
+    <!-- Featured Products -->
     <section id="product" class="section">
         <h2>Featured Products</h2>
         <div class="product-grid">
@@ -130,8 +136,24 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 ShopWay. All rights reserved.</p>
-    </footer>
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      
+        <div class="footer-bottom">
+          &copy; 2025 ShopWay. All rights reserved.
+        </div>
+      </footer>
+      
 
     <script src="ShopWay.js"></script>
 </body>
