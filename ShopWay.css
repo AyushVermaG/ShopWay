@@ -172,13 +172,23 @@ html {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
     
+    .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+    }
+    
     .product-card {
+        width: calc(25% - 2rem); /* Ensures 4 items fit */
         background-color: #2a2a2a;
         padding: 1.5rem;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         transition: transform 0.3s;
+        box-sizing: border-box;
     }
+    
     
     .product-card:hover {
         transform: scale(1.05);
@@ -195,22 +205,6 @@ html {
         transition: box-shadow 0.3s ease;
         pointer-events: none;
       }
-    .product-grid {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 2rem;
-
-    }
-    
-    .product {
-        background-color: #222;
-        padding: 1rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-        max-width: 250px;
-    }
     
     .product-card img {
         width: 100%;
