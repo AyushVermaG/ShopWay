@@ -88,11 +88,11 @@ html {
       }
       
       .hero-slide:nth-child(2) {
-        background: url('images/deleivery.jpg') no-repeat center center/cover;
+        background: url('images/deleivery1.jpg') no-repeat center center/cover;
       }
       
       .hero-slide:nth-child(3) {
-        background: url('images/4deals.jpg') no-repeat center center/cover;
+        background: url('https://img.freepik.com/free-photo/stunned-speechless-impressed-attractive-redhead-woman-with-freckles-yellow-coat-drop-jaw-amaz_1258-140033.jpg?t=st=1746086085~exp=1746089685~hmac=00c64b479f43548889bf3c713eac8a38bbf8a39bc5c7ec4a868ad0aafff20e52&w=1380'') no-repeat center center/cover;
       }
       
     .hero-section {
@@ -132,7 +132,7 @@ html {
     }
     
     .btn, .primary-btn {
-        background-color: cyan;
+        background-color: #e64500;
         color: white;
         border: none;
         padding: 0.75rem 1.5rem;
@@ -144,7 +144,7 @@ html {
     }
     
     .btn:hover, .primary-btn:hover {
-        background-color: #e64500;
+        background-color: rgb(100, 211, 196);
     }
     
     .wishlist-btn {
