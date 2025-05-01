@@ -125,3 +125,5 @@ function showSection(section) {
 
     slides[current].classList.add('active');
   }, 4000);
+
+
