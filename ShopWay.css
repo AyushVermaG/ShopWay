@@ -400,3 +400,25 @@ body.light .dashboard-content {
   
   }
   
+  .category {
+    margin: 10px 20px;
+    text-align: center;
+    flex: auto;
+  }
+
+  .category img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .category h3 {
+    margin-top: 10px;
+  }
+
+  .categories {
+    display: flex;
+    overflow-x: auto; 
+    padding: 20px;
+    background-color: #1a1a1a;
+    margin: 30px 10px;
+}
