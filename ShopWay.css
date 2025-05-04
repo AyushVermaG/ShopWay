@@ -46,7 +46,10 @@ html {
       text-decoration: none;
       font-weight: 500;
   }
-
+  .dropdown-content a:hover {
+      color: #e64500;
+      transition: 0.5s;
+  }
     /* Hero Section */
        .hero-slider {
         position: relative;
@@ -203,7 +206,7 @@ html {
     
     .product-card:hover {
         transform: scale(1.05);
-        box-shadow:0 0 10px peachpuff;
+        box-shadow:0 0 10px silver;
     }
     .product-card::after {
         content: '';
