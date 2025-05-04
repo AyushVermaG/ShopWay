@@ -27,6 +27,10 @@ html {
       font-size: 1.5rem;
       font-weight: bold;
   }
+  .logo:hover {
+      color: #e64500;
+      transition: 0.5s;
+  }
   
   nav ul {
       list-style: none;
