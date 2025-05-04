@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat with Retailer - ShopWay</title>
+  <link rel="stylesheet" href="ShopWay.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+</head>
+<body class="dark">
+
+  <!-- Dark/Light Mode Toggle -->
+  <div class="mode-toggle">
+    <button onclick="toggleMode()">🌙 / 🌞</button>
+  </div>
+
+  <header class="navbar">
+    <div class="logo">ShopWay</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#chat">Chat with Retailer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Chat Section -->
+  <main class="chat-container section" id="chat">
+    <h2>Chat with Retailer</h2>
+    <div class="chat-box" id="chatBox">
+      <div class="message bot">Hello! How can I assist you today?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type your message..." />
+      <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 ShopWay. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="ShopWay.js"></script>
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const chatBox = document.getElementById('chatBox');
+      const userMessage = input.value.trim();
+
+      if (userMessage === '') return;
+
+      const userDiv = document.createElement('div');
+      userDiv.className = 'message user';
+      userDiv.textContent = userMessage;
+      chatBox.appendChild(userDiv);
+
+      input.value = '';
+
+      // Simulate bot reply
+      setTimeout(() => {
+        const botDiv = document.createElement('div');
+        botDiv.className = 'message bot';
+        botDiv.textContent = "Thanks for your message! A retailer will respond shortly.";
+        chatBox.appendChild(botDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
