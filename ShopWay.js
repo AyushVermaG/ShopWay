@@ -126,4 +126,27 @@ function showSection(section) {
     slides[current].classList.add('active');
   }, 4000);
 
+  function searchProducts() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const productCards = document.querySelectorAll(".product-card");
+    let matchFound = false;
 
+    productCards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        if (title.includes(input)) {
+            card.style.display = "block";
+            matchFound = true;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    // Scroll to results if match found
+    if (matchFound) {
+        // Scroll to product container or category section
+        const section = document.querySelector(".categories") || document.querySelector(".product-section");
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+}

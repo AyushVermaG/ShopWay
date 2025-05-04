@@ -16,44 +16,57 @@
     <div class="mode-toggle">
         <button onclick="toggleMode()">🌙 / 🌞</button>
     </div>
+ <!-- Header and Navbar -->
+ <header class="navbar">
+      
+  <div class="logo">ShopWay</div>
 
-    <!-- Header and Navbar -->
-    <header class="navbar">
-        <div class="logo">ShopWay</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li class="dropdown">
-                    <a href="#products">Products</a>
-                    <div class="dropdown-content">
-                        <p><a href="electronics.html">Mobiles & Electronics</a></p>
-                        <p><a href="Fashion.html">Fashion</a></p>
-                        <p><a href="Home & Kitchen.html">Home & Kitchen</a></p>
-                        <p><a href="Beauty & Personal Care.html">Beauty & Personal Care</a></p>
-                        <p><a href="Grocery & Gourmet.html">Grocery & Gourmet</a></p>
-                        <p><a href="Toys.html">Toys, Kids & Baby Products</a></p>
-                        <p><a href="sports.html">Sports, Fitness & Outdoors</a></p>
-                        <p><a href="Automotive.html">Automotive</a></p>
-                        <p><a href="Books.html">Books & Audible</a></p>
-                        <p><a href="jewelry.html">Jewelry & Watches</a></p>
-                        <p><a href="music.html">Music, Movies & Gaming</a></p>
-                        <p><a href="art.html">Handmade & Art</a></p>
-                    </div>
-                </li>
-                <li><a href="#delivery">Single-Day Delivery</a></li>
-                <li><a href="Chat.html">Chat with Retailer</a></li>
-                <li><a href="#cart">Cart</a></li>
-                <li><a href="sellercss.html">Seller Dashboard</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Hero Slider Section -->
+  <!-- Search bar -->
+ <div class="search-container">
+  <input
+      type="text"
+      id="searchInput"
+      placeholder="Search products..."
+      onkeyup="searchProducts()"
+  />
+</div>
+
+  <nav>
+      <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li class="dropdown">
+              <a href="#products">Products</a>
+              <div class="dropdown-content">
+                <p><a href="mobiles.electronics.html">Mobiles & Electronics</a></p>
+                <p><a href="Fashion.html">Fashion</a></p>
+                <p><a href="Kitchen.html">Home & Kitchen</a></p>
+                <p><a href="Beauty.html">Beauty & Personal Care</a></p>
+                <p><a href="Grocery.html">Grocery & Gourmet</a></p>
+                <p><a href="Toys.html">Toys, Kids & Baby Products</a></p>
+                <p><a href="sports.html">Sports, Fitness & Outdoors</a></p>
+                <p><a href="Automotive.html">Automotive</a></p>
+                <p><a href="Books.html">Books & Audible</a></p>
+                <p><a href="jewelry.html">Jewelry & Watches</a></p>
+                <p><a href="music.html">Music, Movies & Gaming</a></p>
+                <p><a href="art.html">Handmade & Art</a></p>
+            </div>
+          </li>
+          <li><a href="#delivery">Single-Day Delivery</a></li>
+          <li><a href="Chat.html">Chat with Retailer</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="sellercss.html">Seller Dashboard</a></li>
+      </ul>
+  </nav>
+  </header>
+
+  
+    <!-- Hero Section -->
     <section class="hero-slider">
         <div class="hero-slide active">
           <div class="hero-content">
             <h1>Welcome to ShopWay</h1>
             <p>Your one-stop destination for online shopping</p>
-            <a href="#shop-now" class="btn">Shop Now</a>
+            <a href="#product" class="btn">Shop Now</a>
           </div>
         </div>
       
@@ -61,7 +74,7 @@
           <div class="hero-content">
             <h1>Fast Delivery</h1>
             <p>Get your orders within 24 hours</p>
-            <a href="#shop-now" class="btn">Start Shopping</a>
+            <a href="#product" class="btn">Start Shopping</a>
           </div>
         </div>
       
@@ -69,7 +82,6 @@
           <div class="hero-content">
             <h1>Top Deals Every Day</h1>
             <p>Exclusive discounts on best sellers</p>
-            <a href="#shop-now" class="btn">See Offers</a>
           </div>
         </div>
       </section>
