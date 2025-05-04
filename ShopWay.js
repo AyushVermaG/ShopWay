@@ -127,3 +127,19 @@ function showSection(section) {
   }, 4000);
 
 
+  
+function searchProducts() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const productCards = document.querySelectorAll(".product-card");
+
+    productCards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        if (title.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+
