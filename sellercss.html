@@ -1,0 +1,132 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShopWay Seller Dashboard</title>
+  <link rel="stylesheet" href="SCM.css">
+  
+</head>
+<style>
+  /* Seller Dashboard Specific Styling */
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .card {
+    background-color: var(--card-bg, #222);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  .card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  .card p {
+    font-size: 0.9em;
+    color: gray;
+  }
+  .card button {
+    margin-top: 15px;
+  }
+  .dashboard-content {
+    margin-top: 30px;
+  }
+</style>
+<body class="dark">
+
+  <!-- Dark/Light Mode Toggle -->
+  <div class="mode-toggle">
+    <button onclick="toggleMode()">🌙/🌞</button>
+  </div>
+
+  <header>
+    <div class="logo">ShopWay</div>
+    <nav>
+      <ul>
+        <li><a href="SCM.html">Home</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#delivery">Single-Day Delivery</a></li>
+        <li><a href="index.html#chat">Chat with Retailer</a></li>
+        <li><a href="index.html#cart">Cart</a></li>
+        <li><a href="seller.html">Seller Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h1>Seller Dashboard</h1>
+    <p>Manage your shop and products easily from here.</p>
+
+    <div class="dashboard">
+      <div class="card">
+        <h2>Add New Product</h2>
+        <p>Create new product listings for customers to buy.</p>
+        <button class="btn" onclick="showSellerSection('add-product')">➕ Add Product</button>
+      </div>
+      <div class="card">
+        <h2>View Orders</h2>
+        <p>Track customer orders and delivery status.</p>
+        <button class="btn" onclick="showSellerSection('view-orders')">📦 View Orders</button>
+      </div>
+      <div class="card">
+        <h2>Manage Products</h2>
+        <p>Edit or delete your existing product listings.</p>
+        <button class="btn" onclick="showSellerSection('manage-products')">🛠 Manage Products</button>
+      </div>
+    </div>
+
+    <div id="seller-dashboard-content" class="dashboard-content"></div>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ShopWay. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showSellerSection(section) {
+      const content = document.getElementById('seller-dashboard-content');
+      if (section === 'add-product') {
+        content.innerHTML = `
+          <h2>Add New Product</h2>
+          <form class="product-form">
+            <label>Product Name:</label><br>
+            <input type="text" placeholder="Enter product name"><br><br>
+            <label>Price (₹):</label><br>
+            <input type="number" placeholder="Enter price"><br><br>
+            <label>Product Image URL:</label><br>
+            <input type="text" placeholder="Enter image URL"><br><br>
+            <button class="btn" type="submit">Add Product</button>
+          </form>
+        `;
+      } else if (section === 'view-orders') {
+        content.innerHTML = `
+          <h2>Orders</h2>
+          <p>No new orders yet!</p>
+        `;
+      } else if (section === 'manage-products') {
+        content.innerHTML = `
+          <h2>Manage Products</h2>
+          <p>You have 0 products listed currently.</p>
+        `;
+      }
+    }
+
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+
+</body>
+</html>
