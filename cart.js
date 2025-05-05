@@ -1,178 +1,172 @@
-// cart.js - ShopWay Cart Management System
-
-// Cart Data Structure
-let cart = JSON.parse(localStorage.getItem('shopwayCart')) || [];
-
-// DOM Elements
-const cartItemsContainer = document.querySelector('.cart-items');
-const emptyCartMessage = document.getElementById('empty-cart-message');
-const subtotalElement = document.getElementById('subtotal');
-const totalElement = document.getElementById('total');
-const checkoutButton = document.getElementById('checkout-btn');
-const cartCountElement = document.getElementById('cart-count');
-
-// Product Data (replace with your actual product data)
-const products = {
-    'Wireless Headphones': { price: 2499 },
-    'Smart Watch': { price: 3999 },
-    'Bluetooth Speaker': { price: 1299 },
-    'Smartphone': { price: 15999 },
-    'Gaming Laptop': { price: 59999 },
-    'Stylish Sneakers': { price: 3499 },
-    'Luxury Wristwatch': { price: 8999 },
-    'SAMSUNG Family Hub Refrigerator': { price: 359499 }
-};
-
-// Initialize Cart
-function initCart() {
-    updateCartDisplay();
-    updateCartCount();
+// cart.js - Complete ShopWay Cart Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Cart data structure
+    let cart = JSON.parse(localStorage.getItem('shopway_cart')) || [];
     
-    if (checkoutButton) {
-        checkoutButton.addEventListener('click', handleCheckout);
-    }
-}
+    // Product database (replace with your actual products)
+    const products = {
+        'Wireless Headphones': { price: 2499 },
+        'Smart Watch': { price: 3999 },
+        'Bluetooth Speaker': { price: 1299 },
+        'Smartphone': { price: 15999 },
+        'Gaming Laptop': { price: 59999 },
+        'Stylish Sneakers': { price: 3499 },
+        'Luxury Wristwatch': { price: 8999 },
+        'SAMSUNG Family Hub Refrigerator': { price: 359499 }
+    };
 
-// Update Cart Display
-function updateCartDisplay() {
-    if (!cartItemsContainer) return;
+    // Initialize cart
+    initCart();
 
-    if (cart.length === 0) {
-        showEmptyCart();
-        return;
-    }
-
-    const cartItems = groupCartItems();
-    renderCartItems(cartItems);
-    updateCartTotals();
-}
-
-// Group items by product and count quantities
-function groupCartItems() {
-    return cart.reduce((grouped, productName) => {
-        if (!grouped[productName]) {
-            grouped[productName] = {
-                name: productName,
-                quantity: 0,
-                price: products[productName]?.price || 0
-            };
+    // Public API
+    window.shopwayCart = {
+        addItem: function(productName) {
+            if (products[productName]) {
+                cart.push(productName);
+                saveCart();
+                updateCartCount();
+                if (window.location.pathname.includes('cart.html')) {
+                    renderCart();
+                }
+                return true;
+            }
+            return false;
+        },
+        getCartCount: function() {
+            return cart.length;
         }
-        grouped[productName].quantity++;
-        return grouped;
-    }, {});
-}
+    };
 
-// Render cart items to DOM
-function renderCartItems(items) {
-    emptyCartMessage.style.display = 'none';
-    
-    cartItemsContainer.innerHTML = Object.values(items).map(item => `
-        <div class="cart-item" data-product="${item.name}">
-            <div class="cart-item-details">
-                <h3>${item.name}</h3>
-                <p>₹${item.price.toLocaleString()}</p>
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="adjustQuantity('${item.name}', -1)">-</button>
-                    <span>${item.quantity}</span>
-                    <button class="quantity-btn" onclick="adjustQuantity('${item.name}', 1)">+</button>
+    // Core functions
+    function initCart() {
+        updateCartCount();
+        if (window.location.pathname.includes('cart.html')) {
+            renderCart();
+            setupEventListeners();
+        }
+    }
+
+    function renderCart() {
+        const container = document.querySelector('.cart-items');
+        if (!container) return;
+
+        if (cart.length === 0) {
+            container.innerHTML = `
+                <div id="empty-cart-message">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Your cart is empty</p>
+                    <a href="shopway.html" class="btn">Continue Shopping</a>
                 </div>
-                <button class="remove-btn" onclick="removeItem('${item.name}')">
-                    Remove
-                </button>
-            </div>
-        </div>
-    `).join('');
-}
-
-// Update cart totals
-function updateCartTotals() {
-    const subtotal = calculateSubtotal();
-    subtotalElement.textContent = `₹${subtotal.toLocaleString()}`;
-    totalElement.textContent = `₹${subtotal.toLocaleString()}`;
-}
-
-// Calculate subtotal
-function calculateSubtotal() {
-    return cart.reduce((total, productName) => {
-        return total + (products[productName]?.price || 0);
-    }, 0);
-}
-
-// Show empty cart message
-function showEmptyCart() {
-    emptyCartMessage.style.display = 'block';
-    cartItemsContainer.innerHTML = '';
-    subtotalElement.textContent = '₹0';
-    totalElement.textContent = '₹0';
-    
-    if (checkoutButton) {
-        checkoutButton.disabled = true;
-    }
-}
-
-// Adjust product quantity
-function adjustQuantity(productName, change) {
-    const index = cart.indexOf(productName);
-    
-    if (index !== -1 && change < 0) {
-        cart.splice(index, 1);
-    } else if (change > 0) {
-        cart.push(productName);
-    }
-    
-    saveCart();
-    updateCartDisplay();
-    updateCartCount();
-}
-
-// Remove all instances of a product
-function removeItem(productName) {
-    cart = cart.filter(item => item !== productName);
-    saveCart();
-    updateCartDisplay();
-    updateCartCount();
-}
-
-// Update cart count in header
-function updateCartCount() {
-    if (cartCountElement) {
-        cartCountElement.textContent = cart.length;
-    }
-}
-
-// Handle checkout
-function handleCheckout() {
-    if (cart.length === 0) {
-        alert('Your cart is empty!');
-        return;
-    }
-    alert(`Proceeding to checkout with ${cart.length} items. Total: ${totalElement.textContent}`);
-    // In a real app, redirect to checkout page
-}
-
-// Save cart to localStorage
-function saveCart() {
-    localStorage.setItem('shopwayCart', JSON.stringify(cart));
-}
-
-// Public API for other pages
-window.ShopWayCart = {
-    addItem: function(productName) {
-        if (products[productName]) {
-            cart.push(productName);
-            saveCart();
-            updateCartCount();
-            return true;
+            `;
+            updateTotals();
+            return;
         }
-        return false;
-    },
-    getCount: function() {
-        return cart.length;
-    },
-    getItems: function() {
-        return [...cart];
-    }
-};
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initCart);
+        // Group items by product and count quantities
+        const groupedItems = cart.reduce((acc, productName) => {
+            if (!acc[productName]) {
+                acc[productName] = {
+                    name: productName,
+                    quantity: 0,
+                    price: products[productName]?.price || 0
+                };
+            }
+            acc[productName].quantity++;
+            return acc;
+        }, {});
+
+        // Render cart items
+        container.innerHTML = Object.values(groupedItems).map(item => `
+            <div class="cart-item" data-product="${item.name}">
+                <div class="item-info">
+                    <h3>${item.name}</h3>
+                    <p>₹${item.price.toLocaleString('en-IN')}</p>
+                </div>
+                <div class="item-controls">
+                    <button class="quantity-btn minus">−</button>
+                    <span class="quantity">${item.quantity}</span>
+                    <button class="quantity-btn plus">+</button>
+                    <button class="remove-btn">
+                        <i class="fas fa-trash"></i> Remove
+                    </button>
+                </div>
+            </div>
+        `).join('');
+
+        updateTotals();
+    }
+
+    function setupEventListeners() {
+        document.querySelectorAll('.minus').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productName = this.closest('.cart-item').dataset.product;
+                updateQuantity(productName, -1);
+            });
+        });
+
+        document.querySelectorAll('.plus').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productName = this.closest('.cart-item').dataset.product;
+                updateQuantity(productName, 1);
+            });
+        });
+
+        document.querySelectorAll('.remove-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productName = this.closest('.cart-item').dataset.product;
+                removeItem(productName);
+            });
+        });
+
+        document.getElementById('checkout-btn')?.addEventListener('click', function() {
+            if (cart.length > 0) {
+                alert(`Proceeding to checkout. Total: ₹${calculateTotal().toLocaleString('en-IN')}`);
+                // In real implementation, redirect to checkout page
+            } else {
+                alert('Your cart is empty!');
+            }
+        });
+    }
+
+    function updateQuantity(productName, change) {
+        const index = cart.indexOf(productName);
+        if (index !== -1 && change < 0) {
+            cart.splice(index, 1);
+        } else if (change > 0) {
+            cart.push(productName);
+        }
+        saveCart();
+        renderCart();
+        updateCartCount();
+    }
+
+    function removeItem(productName) {
+        cart = cart.filter(item => item !== productName);
+        saveCart();
+        renderCart();
+        updateCartCount();
+    }
+
+    function calculateTotal() {
+        return cart.reduce((total, productName) => {
+            return total + (products[productName]?.price || 0);
+        }, 0);
+    }
+
+    function updateTotals() {
+        const total = calculateTotal();
+        document.getElementById('subtotal').textContent = `₹${total.toLocaleString('en-IN')}`;
+        document.getElementById('total').textContent = `₹${total.toLocaleString('en-IN')}`;
+    }
+
+    function updateCartCount() {
+        const countElement = document.getElementById('cart-count');
+        if (countElement) {
+            countElement.textContent = cart.length;
+        }
+    }
+
+    function saveCart() {
+        localStorage.setItem('shopway_cart', JSON.stringify(cart));
+    }
+});
