@@ -7,35 +7,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const products = {
         'Wireless Headphones': { 
             price: 2499,
-            image: 'INSERT_IMAGE_LINK_HERE' 
+            image: 'https://img.freepik.com/free-photo/still-life-wireless-cyberpunk-headphones_23-2151072227.jpg?semt=ais_hybrid&w=740' 
         },
         'Smart Watch': { 
             price: 3999,
-            image: 'INSERT_IMAGE_LINK_HERE'
+            image: 'https://www.leafstudios.in/cdn/shop/files/1_1099cd20-7237-4bdf-a180-b7126de5ef3d_grande.png?v=1722230645'
         },
         'Bluetooth Speaker': { 
             price: 1299,
-            image: 'INSERT_IMAGE_LINK_HERE'
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPzO2aUkPx4r1SIu1Q6_GPnQu-XQG-1F8Pow&s'
         },
         'Smartphone': { 
             price: 15999,
-            image: 'INSERT_IMAGE_LINK_HERE'
+            image: 'https://www.lavamobiles.com/_next/image?url=https://hotfixapi.lavamobiles.com/storage/media/community/image/blaze-duo-listing-1733894159.webp&w=640&q=75'
         },
         'Gaming Laptop': { 
             price: 59999,
-            image: 'INSERT_IMAGE_LINK_HERE'
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsmQHmmXbmbrV1o5cKcS3Bqp05T3BuEws-8g&s'
         },
         'Stylish Sneakers': { 
             price: 3499,
-            image: 'INSERT_IMAGE_LINK_HERE'
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9sZJogjpf_auIHgLX5lsbwzJE9MgyA4Az7Q&s'
         },
         'Luxury Wristwatch': { 
             price: 8999,
-            image: 'INSERT_IMAGE_LINK_HERE'
+            image: 'https://images-cdn.ubuy.ci/675a6d12bac4a004d15e4fe3-poedagar-luxury-men-quartz-watch.jpg'
         },
         'SAMSUNG Family Hub Refrigerator': { 
             price: 359499,
-            image: 'INSERT_IMAGE_LINK_HERE'
+            image: 'Ihttps://www.cnet.com/a/img/resize/3be58b218810a0d5ba3c43c20e1eb140b8509bb2/hub/2016/07/15/bda3c418-740a-4183-93fc-3b95d5a1cc58/samsung-family-hub-refrigerator-promo.jpg?auto=webp&width=768'
         }
         // Add all other products similarly...
     };
@@ -107,9 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = Object.entries(groupedItems).map(([product, quantity]) => `
             <div class="cart-item product-card">
                 <div class="product-image">
-                    <img src="${products[product]?.image || 'INSERT_DEFAULT_IMAGE_LINK_HERE'}" 
+                    <img src="${products[product]?.image || '"C:\scmdot\ShopWay\images\gpt banner.png"'}" 
                          alt="${product}" 
-                         onerror="this.src='INSERT_DEFAULT_IMAGE_LINK_HERE'">
+                         onerror="this.src='"C:\scmdot\ShopWay\images\gpt banner.png"'">
                 </div>
                 <div class="product-details">
                     <h3>${product}</h3>
