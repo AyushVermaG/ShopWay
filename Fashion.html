@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopWay - Electronics Store</title>
+    <link rel="stylesheet" href="1.css" />
+    <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">Shop<font color="aqua">Way</font></div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+      </div>
+      <nav>
+        <a href="shopway.html"><button class="home-button">Home</button></a>
+        <a href="cart.html"><button class="cart-button">Cart</button></a>
+      </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="product-section">
+        <h1>Shop Latest Fashion Trends</h1>
+        <p>Discover stylish apparel, footwear, and accessories for every occasion.</p>
+      
+        <!-- Product Grid -->
+        <div class="product-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <img src="https://www.brandkiosk.in/cdn/shop/products/7916333690.jpg?v=1706631362" alt="Men's T-shirt" width="350" height="350" />
+            <h3>Men's Cotton T-shirt</h3>
+            <p class="price">Rs. 799</p>
+            <button class="buy-now-btn" onclick="buyNow('Men\'s Cotton T-shirt')">Buy Now</button>
+          </div>
+      
+          <!-- Product 2 -->
+          <div class="product-card">
+            <img src="https://images.bestsellerclothing.in/data/vero-moda/14-aug-2024/900900301_g6.jpg?width=1080&height=1355&mode=fill&fill=blur&format=auto&dpr=1.2" alt="Women's Dress"width="350" height="350" />
+            <h3>Floral Maxi Dress</h3>
+            <p class="price">Rs. 1,499</p>
+            <button class="buy-now-btn" onclick="buyNow('Floral Maxi Dress')">Buy Now</button>
+          </div>
+      
+          <!-- Product 3 -->
+          <div class="product-card">
+            <img src="https://levis.com.au/cdn/shop/files/MB_00505-2858_EAS_PS_LD_FV_354x442_crop_center.progressive.jpg?v=1746280257" alt="Men's Jeans" width="350" height="350" />
+            <h3>Levi's Slim Fit Jeans</h3>
+            <p class="price">Rs. 2,499</p>
+            <button class="buy-now-btn" onclick="buyNow('Levi\'s Slim Fit Jeans')">Buy Now</button>
+          </div>
+      
+          <!-- Product 4 -->
+          <div class="product-card">
+            <img src="https://www.maatshi.com/cdn/shop/files/MPD0183-01.jpg?v=1697287459" alt="Kurti" width="350" height="350"/>
+            <h3>Printed Kurti</h3>
+            <p class="price">Rs. 999</p>
+            <button class="buy-now-btn" onclick="buyNow('Printed Kurti')">Buy Now</button>
+          </div>
+      
+          <!-- Product 5 -->
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwjV1Ik6W9usndfW9mIz9dkPTghttyRW0Hcg&s" alt="Sneakers"width="350" height="350" />
+            <h3>Men's White Sneakers</h3>
+            <p class="price">Rs. 2,999</p>
+            <button class="buy-now-btn" onclick="buyNow('Men\'s White Sneakers')">Buy Now</button>
+          </div>
+      
+          <!-- Product 6 -->
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN25uNlV4EbTvjqycc-dmUqH5RZTGZTHCLbQ&s" alt="Heels" width="350" height="350"/>
+            <h3>Women's Block Heels</h3>
+            <p class="price">Rs. 1,899</p>
+            <button class="buy-now-btn" onclick="buyNow('Women\'s Block Heels')">Buy Now</button>
+          </div>
+      
+          <!-- Product 7 -->
+          <div class="product-card">
+            <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/watch/9/d/k/1-fs5992-fossil-men-original-imagpmycdyzuuh3d.jpeg?q=90&crop=false" alt="Watch"width="350" height="350" />
+            <h3>Fossil Analog Watch</h3>
+            <p class="price">Rs. 5,499</p>
+            <button class="buy-now-btn" onclick="buyNow('Fossil Analog Watch')">Buy Now</button>
+          </div>
+      
+          <!-- Product 8 -->
+          <div class="product-card">
+            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCxaHatrjBcb-gVxdvdKUR0toNeaYbxh7Jiw&s" alt="Sunglasses" width="350" height="350"/>
+            <h3>Ray-Ban Sunglasses</h3>
+            <p class="price">Rs. 3,799</p>
+            <button class="buy-now-btn" onclick="buyNow('Ray-Ban Sunglasses')">Buy Now</button>
+          </div>
+      
+          <!-- Product 9 -->
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/81QcLfGi2dL._AC_UY1100_.jpg" alt="Jacket"width="350" height="350" />
+            <h3>Men's Denim Jacket</h3>
+            <p class="price">Rs. 2,199</p>
+            <button class="buy-now-btn" onclick="buyNow('Men\'s Denim Jacket')">Buy Now</button>
+          </div>
+      
+          <!-- Product 10 -->
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJekiCex3avUwkBBOvq1y8M0pXhRc90Jh0JAvRhXfcjkOP5PkWzNFpv1zSN5o_2Ie4sjE&usqp=CAU" alt="Scarf" width="350" height="350"/>
+            <h3>Woolen Scarf</h3>
+            <p class="price">Rs. 699</p>
+            <button class="buy-now-btn" onclick="buyNow('Woolen Scarf')">Buy Now</button>
+          </div>
+      
+          <!-- Product 11 -->
+          <div class="product-card">
+            <img src="https://media.istockphoto.com/id/1281878811/photo/classic-black-handbag-on-white-background.jpg?s=612x612&w=0&k=20&c=1DB-cGduR6gSTYCtm1ztig7YxaOeplqMRRhFxGDSAU8=" alt="Handbag" width="350" height="350"/>
+            <h3>Leather Handbag</h3>
+            <p class="price">Rs. 3,299</p>
+            <button class="buy-now-btn" onclick="buyNow('Leather Handbag')">Buy Now</button>
+          </div>
+      
+          <!-- Product 12 -->
+          <div class="product-card">
+            <img src="https://images-cdn.ubuy.co.in/633b51dbc65f6513494dbbc5-tuscom-adult-casual-outdoors-sunshade.jpg" alt="Cap" width="350" height="350"/>
+            <h3>Casual Baseball Cap</h3>
+            <p class="price">Rs. 499</p>
+            <button class="buy-now-btn" onclick="buyNow('Casual Baseball Cap')">Buy Now</button>
+          </div>
+        </div>
+      </section>
+      
+    <script>
+      function buyNow(productName) {
+        const confirmBuy = confirm(`Do you want to buy ${productName}?`);
+        if (confirmBuy) {
+          alert(`Redirecting to checkout for ${productName}...`);
+          // Optionally redirect to a checkout page
+          // window.location.href = 'checkout.html?product=' + encodeURIComponent(productName);
+        }
+      }
+    </script>
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      
+        <div class="footer-bottom">
+          &copy; 2025 ShopWay. All rights reserved.
+        </div>
+      </footer>
+  </body>
+</html>

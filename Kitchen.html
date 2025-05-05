@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopWay - Electronics Store</title>
+    <link rel="stylesheet" href="1.css" />
+    <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">Shop<font color="aqua">Way</font></div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+      </div>
+      <nav>
+        <a href="shopway.html"><button class="home-button">Home</button></a>
+        <a href="cart.html"><button class="cart-button">Cart</button></a>
+      </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="product-section">
+        <h1>Home & Kitchen Essentials</h1>
+        <p>Upgrade your home with quality appliances, cookware, and more.</p>
+      
+        <div class="product-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/414ly0wsjYL._AC_UF894,1000_QL80_.jpg" alt="Air width="350" height="350"Fryer" width="350" height="350" />
+            <h3>Philips Air Fryer</h3>
+            <p class="price">Rs. 8,499</p>
+            <button class="buy-now-btn" onclick="buyNow('Philips Air Fryer')">Buy Now</button>
+          </div>
+      
+          <!-- Product 2 -->
+          <div class="product-card">
+            <img src="https://www.lg.com/content/dam/channel/wcms/in/images/microwave-ovens/mc3286brum_dbkqiln_eail_in_c/gallery/MC3286BRUM-microwave-ovens-Front-view-D-01.jpg" alt="Microwave Oven"width="350" height="350" />
+            <h3>LG Microwave Oven</h3>
+            <p class="price">Rs. 10,999</p>
+            <button class="buy-now-btn" onclick="buyNow('LG Microwave Oven')">Buy Now</button>
+          </div>
+      
+          <!-- Product 3 -->
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/514M+UZ5bhL.jpg" alt="Pressure Cooker" width="350" height="350"/>
+            <h3>Prestige Pressure Cooker</h3>
+            <p class="price">Rs. 1,699</p>
+            <button class="buy-now-btn" onclick="buyNow('Prestige Pressure Cooker')">Buy Now</button>
+          </div>
+      
+          <!-- Product 4 -->
+          <div class="product-card">
+            <img src="https://rukminim2.flixcart.com/image/850/1000/kpmy8i80/hand-blender/l/y/x/hb-22-hand-blender-with-chopper-bowl-410536-bajaj-original-imag3tnp2bg7kfzg.jpeg?q=90&crop=false" alt="Blender"width="350" height="350" />
+            <h3>Bajaj Hand Blender</h3>
+            <p class="price">Rs. 1,299</p>
+            <button class="buy-now-btn" onclick="buyNow('Bajaj Hand Blender')">Buy Now</button>
+          </div>
+      
+          <!-- Product 5 -->
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71mFLHq8jML.jpg" alt="Knife Set" width="350" height="350"/>
+            <h3>Stainless Steel Knife Set</h3>
+            <p class="price">Rs. 899</p>
+            <button class="buy-now-btn" onclick="buyNow('Stainless Steel Knife Set')">Buy Now</button>
+          </div>
+      
+          <!-- Product 6 -->
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71vfrhmJ1SL.jpg" alt="Mixer grinder"width="350" height="350"/>
+            <h3>Mixer Grinder</h3>
+            <p class="price">Rs. 5,499</p>
+            <button class="buy-now-btn" onclick="buyNow('Mixer Grinder')">Buy Now</button>
+          </div>
+      
+          <!-- Product 7 -->
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/51KjABAp4YL._AC_UF1000,1000_QL80_.jpg" alt="Table Lamp" width="350" height="350"/>
+            <h3>LED Table Lamp</h3>
+            <p class="price">Rs. 799</p>
+            <button class="buy-now-btn" onclick="buyNow('LED Table Lamp')">Buy Now</button>
+          </div>
+      
+          <!-- Product 8 -->
+          <div class="product-card">
+            <img src="https://images.jdmagicbox.com/quickquotes/images_main/pureit-classic-23l-271262553-rlo0v5fn.jpg" alt="Water Filter"width="350" height="350" />
+            <h3>Pureit Water Purifier</h3>
+            <p class="price">Rs. 7,999</p>
+            <button class="buy-now-btn" onclick="buyNow('Pureit Water Purifier')">Buy Now</button>
+          </div>
+      
+          <!-- Product 9 -->
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQikC0txw-ehAs-7FKcw9JsxzqK-3QGxRqUNg&s" alt="Cookware Set"width="350" height="350" />
+            <h3>Non-Stick Cookware Set</h3>
+            <p class="price">Rs. 3,299</p>
+            <button class="buy-now-btn" onclick="buyNow('Non-Stick Cookware Set')">Buy Now</button>
+          </div>
+      
+          <!-- Product 10 -->
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61t1GSeXYTL._AC_UF894,1000_QL80_.jpg" alt="Prestige Gas Stove" width="350" height="350"/>
+            <h3>Prestige Gas Stove</h3>
+            <p class="price">Rs. 1,599</p>
+            <button class="buy-now-btn" onclick="buyNow('Prestige Gas Stove')">Buy Now</button>
+          </div>
+      
+          <!-- Product 11 -->
+          <div class="product-card">
+            <img src="https://img.tatacliq.com/images/i19//437Wx649H/MP000000023240668_437Wx649H_202408082226091.jpeg" alt="Toaster" width="350" height="350"/>
+            <h3>2-Slice Toaster</h3>
+            <p class="price">Rs. 1,099</p>
+            <button class="buy-now-btn" onclick="buyNow('2-Slice Toaster')">Buy Now</button>
+          </div>
+      
+          <!-- Product 12 -->
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61Bv4mAPPfL._AC_UF894,1000_QL80_.jpg" alt="Curtains"width="350" height="350" />
+            <h3>Blackout Curtains (Set of 2)</h3>
+            <p class="price">Rs. 1,199</p>
+            <button class="buy-now-btn" onclick="buyNow('Blackout Curtains')">Buy Now</button>
+          </div>
+        </div>
+      </section>
+      
+      
+    <script>
+      function buyNow(productName) {
+        const confirmBuy = confirm(`Do you want to buy ${productName}?`);
+        if (confirmBuy) {
+          alert(`Redirecting to checkout for ${productName}...`);
+          // Optionally redirect to a checkout page
+          // window.location.href = 'checkout.html?product=' + encodeURIComponent(productName);
+        }
+      }
+    </script>
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      
+        <div class="footer-bottom">
+          &copy; 2025 ShopWay. All rights reserved.
+        </div>
+      </footer>
+  </body>
+</html>
