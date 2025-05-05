@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, {});
 
         container.innerHTML = Object.entries(groupedItems).map(([product, quantity]) => `
-            <div class="cart-item product-card">
+            <div class="cart-item product-cards">
                 <div class="product-image">
                     <img src="${products[product]?.image || '"C:\scmdot\ShopWay\images\gpt banner.png"'}" 
                          alt="${product}" 
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="product-details">
                     <h3>${product}</h3>
                     <p>₹${products[product]?.price?.toLocaleString('en-IN') || '0'}</p>
-                </div>
+                
                 <div class="product-controls">
                     <button class="btn quantity-btn" 
                             onclick="shopwayCart.adjustQuantity('${product}', -1)">
@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             onclick="shopwayCart.removeItem('${product}')">
                         <i class="fas fa-trash"></i> Remove
                     </button>
+                    </div>
                 </div>
             </div>
         `).join('');
