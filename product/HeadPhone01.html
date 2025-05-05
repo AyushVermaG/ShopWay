@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ShopWay - Wireless Headphones with Bluetooth, Deep Bass & Modern Design. Rated 4.2/5 by 1245 customers.">
+  <title>Product Page - Wireless Headphones - ShopWay</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Your existing dark theme CSS -->
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .navbar {
+      background-color: #1d1d1d;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #333;
+    }
+
+    .logo {
+      color: #ff5722;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav .nav-links li {
+      position: relative;
+    }
+
+    nav .nav-links a {
+      color: #e0e0e0;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      display: block;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav .nav-links a:hover {
+      color: #ff5722;
+    }
+
+    .product-container {
+      display: flex;
+      padding: 1rem;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+
+    .product-image {
+      flex: 1 1 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-image img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-details {
+      flex: 1 1 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-details h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #ff5722;
+      transition: color 0.3s ease;
+    }
+
+    .product-details h1:hover {
+      color: #76ff03;
+    }
+
+    .product-details p {
+      line-height: 1.6;
+      color: #bdbdbd;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      color: #76ff03;
+      margin: 1rem 0;
+    }
+
+    .star-rating {
+      color: #ffeb3b;
+      margin: 0.5rem 0;
+    }
+
+    .buttons {
+      margin: 1.5rem 0;
+    }
+
+    .btn, .primary-btn {
+      padding: 0.6rem 1.2rem;
+      margin-right: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn {
+      background-color: #333;
+      color: white;
+    }
+
+    .btn:hover {
+      background-color: #4a4a4a;
+    }
+
+    .primary-btn {
+      background-color: #ff5722;
+      color: white;
+    }
+
+    .primary-btn:hover {
+      background-color: #76ff03;
+    }
+
+    .reviews-section {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-top: 1px solid #333;
+    }
+
+    .dashboard-content {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: 1px solid #444;
+      border-radius: 4px;
+      background-color: #2a2a2a;
+      color: white;
+    }
+
+    h2 {
+      color: #ff5722;
+    }
+
+    .dashboard-content h3 {
+      color: #76ff03;
+    }
+
+    .dashboard-content p {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">ShopWay</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#cart">Cart</a></li>
+        <li><a href="Chat.html">Chat with Retailer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Product Info Section -->
+  <div class="product-container">
+    <div class="product-image">
+      <img src="https://img.freepik.com/free-photo/still-life-wireless-cyberpunk-headphones_23-2151072227.jpg?semt=ais_hybrid&w=740" alt="Wireless Headphones">
+    </div>
+
+    <div class="product-details">
+      <div>
+        <h1>Wireless Headphones</h1>
+        <div class="star-rating" aria-label="Rated 4.2 out of 5 stars">⭐⭐⭐⭐☆ (4.2/5 based on 1,245 reviews)</div>
+        <div class="price">₹2,499</div>
+        <p>
+          These wireless headphones offer high-quality sound with deep bass, built-in Bluetooth for easy connection, and a sleek design.
+          Perfect for music lovers and gamers alike.
+        </p>
+      </div>
+
+      <div class="buttons">
+        <button class="btn" onclick="addToCart('Wireless Headphones')">Add to Cart</button>
+        <button class="primary-btn" onclick="buyNow()">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reviews Section -->
+  <div class="reviews-section">
+    <h2>Customer Reviews</h2>
+
+    <div id="reviewList">
+      <div class="dashboard-content">
+        <h3>Ajay Kumar <span class="star-rating">⭐️⭐️⭐️⭐️</span></h3>
+        <p>Great sound quality and noise cancellation. Comfortable for long listening sessions.</p>
+      </div>
+
+      <div class="dashboard-content">
+        <h3>Neha Sharma <span class="star-rating">⭐️⭐️⭐️</span></h3>
+        <p>The headphones are good but could have better battery life. Overall, decent quality.</p>
+      </div>
+    </div>
+
+    <!-- Review Form -->
+    <div class="dashboard-content">
+      <h3>Add Your Review</h3>
+      <form onsubmit="submitReview(); return false;">
+        <input type="text" placeholder="Your Name" id="reviewerName" required>
+        <textarea placeholder="Write your review..." id="reviewText" rows="4" required></textarea>
+        <button class="btn" type="submit">Submit Review</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function addToCart(product) {
+      alert(product + " added to cart!");
+    }
+
+    function buyNow() {
+      alert("Redirecting to payment gateway...");
+    }
+
+    function submitReview() {
+      const name = document.getElementById('reviewerName').value.trim();
+      const text = document.getElementById('reviewText').value.trim();
+
+      if (name && text) {
+        const newReview = {
+          name: name,
+          text: text,
+          stars: "⭐️⭐️⭐️⭐️"
+        };
+
+        addReviewToPage(newReview);
+        saveReviewToLocal(newReview);
+
+        document.getElementById('reviewerName').value = "";
+        document.getElementById('reviewText').value = "";
+      } else {
+        alert("Please fill in your name and review.");
+      }
+    }
+
+    function addReviewToPage(review) {
+      const reviewContainer = document.createElement('div');
+      reviewContainer.className = 'dashboard-content';
+      reviewContainer.innerHTML = `
+        <h3>${review.name} <span class="star-rating">${review.stars}</span></h3>
+        <p>${review.text}</p>
+      `;
+      document.getElementById('reviewList').appendChild(reviewContainer);
+    }
+
+    function saveReviewToLocal(review) {
+      let reviews = JSON.parse(localStorage.getItem('shopwayReviews') || '[]');
+      reviews.push(review);
+      localStorage.setItem('shopwayReviews', JSON.stringify(reviews));
+    }
+
+    function loadSavedReviews() {
+      let reviews = JSON.parse(localStorage.getItem('shopwayReviews') || '[]');
+      reviews.forEach(addReviewToPage);
+    }
+
+    // Load saved reviews on page load
+    window.onload = loadSavedReviews;
+  </script>
+
+</body>
+</html>
