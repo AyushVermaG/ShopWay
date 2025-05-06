@@ -6,79 +6,355 @@
   <title>Chat with Retailer - ShopWay</title>
   <link rel="stylesheet" href="ShopWay.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
- 
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #f5f5f5;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00bcd4;
+    }
+
+    .toggle-mode button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .chat-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: #1e1e1e;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .chat-header {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chat-header img {
+      width: 40px;
+      border-radius: 50%;
+    }
+
+    .chat-box {
+      height: 300px;
+      overflow-y: auto;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding-right: 10px;
+    }
+
+    .message {
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      max-width: 70%;
+    }
+
+    .message.user {
+      background-color: #333;
+      color: white;
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .message.bot {
+      background-color: #444;
+      color: #ddd;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    .chat-input {
+      display: flex;
+      align-items: center;
+    }
+
+    .chat-input input[type="text"] {
+      flex: 1;
+      padding: 0.75rem;
+      border-radius: 4px;
+      border: none;
+      background-color: #333;
+      color: white;
+      margin-right: 10px;
+    }
+
+    .chat-input button {
+      padding: 0.75rem 1rem;
+      background-color: #e64500;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .chat-input button:hover {
+      background-color: #00bcd4;
+    }
+
+    .footer {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer-links a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #00bcd4;
+    }
+
+    .social-icons a {
+      margin: 0 0.5rem;
+      color: white;
+    }
+
+    .footer-bottom {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Light Theme Support */
+    body.light {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header.light {
+      background-color: #4CAF50;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+    }
+  </style>
 </head>
 <body class="dark">
-
-  <!-- Dark/Light Mode Toggle -->
-  <div class="mode-toggle">
-    <button onclick="toggleMode()">🌙 / 🌞</button>
-  </div>
-
-  <header class="navbar">
+  <header>
     <div class="logo">ShopWay</div>
     <nav>
-      <ul class="nav-links">
-        <li><a href="ShopWay.html">Home</a></li>
-        <li><a href="#chat">Chat with Retailer</a></li>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <div class="toggle-mode">
+      <button onclick="toggleTheme()"><i class="fas fa-adjust"></i></button>
+      <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+
+    </div>
   </header>
 
-  <!-- Chat Section -->
-  <main class="chat-container section" id="chat">
-    <h2>Chat with Retailer</h2>
-    <div class="chat-box" id="chatBox">
-      <div class="message bot">Hello! How can I assist you today?</div>
+  <!-- Chat UI -->
+  <main class="chat-container" id="chat">
+    <div class="chat-header">
+      <img src="images/adarsh 2 img.jpg" alt="Retailer Avatar" />
+      Chat with Retailer
     </div>
+
+    <div class="chat-box" id="chatBox"></div>
+
     <div class="chat-input">
-      <input type="text" id="userInput" placeholder="Type your message..." />
+      <input type="text" placeholder="Type your message..." id="userInput" />
       <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+      <button onclick="deleteChat()" style="margin-left: 10px; background-color: #f44336;">
+        <i class="fas fa-trash-alt"></i>
+      </button>
     </div>
+    
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-links">
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms</a>
+      <a href="about.html">About Us</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
     </div>
     <div class="social-icons">
-      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
-    <div class="footer-bottom">
-      &copy; 2025 ShopWay. All rights reserved.
-    </div>
+    <div class="footer-bottom">&copy; 2025 ShopWay. All rights reserved.</div>
   </footer>
 
-  <script src="ShopWay.js"></script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
   <script>
-    function sendMessage() {
-      const input = document.getElementById('userInput');
-      const chatBox = document.getElementById('chatBox');
-      const userMessage = input.value.trim();
+    // Firebase Initialization
+    const firebaseConfig = {
+      apiKey: "AIzaSyCvVdgZvqtCiC4T0JC5HrmGP8OJZPj1res",
+      authDomain: "shopway-970cb.firebaseapp.com",
+      projectId: "shopway-970cb",
+      storageBucket: "shopway-970cb.appspot.com",
+      messagingSenderId: "119767658704",
+      appId: "1:119767658704:web:b506199a869fb6fe9deed5",
+      measurementId: "G-WM81SQY6P6"
+    };
+  
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const chatBox = document.getElementById('chatBox');
+    const userInput = document.getElementById('userInput');
+  
+    // Listen to new messages from Firestore
+    db.collection("messages")
+      .orderBy("timestamp")
+      .onSnapshot(snapshot => {
+        chatBox.innerHTML = '';
+        snapshot.forEach(doc => {
+          const msg = doc.data();
+          const messageDiv = document.createElement('div');
+          messageDiv.className = `message ${msg.sender}`;
 
-      if (userMessage === '') return;
-
-      const userDiv = document.createElement('div');
-      userDiv.className = 'message user';
-      userDiv.textContent = userMessage;
-      chatBox.appendChild(userDiv);
-
-      input.value = '';
-
-      // Simulate bot reply
-      setTimeout(() => {
-        const botDiv = document.createElement('div');
-        botDiv.className = 'message bot';
-        botDiv.textContent = "Thanks for your message! A retailer will respond shortly.";
-        chatBox.appendChild(botDiv);
+          messageDiv.textContent = msg.text;
+          chatBox.appendChild(messageDiv);
+        });
         chatBox.scrollTop = chatBox.scrollHeight;
-      }, 1000);
+      });
+  
+    // Smart bot replies based on keyword recognition
+    const getBotReply = (input) => {
+      input = input.toLowerCase();
+      if (input.includes("order") && input.includes("status")) {
+        return "Sure! Please provide your Order ID.";
+      } else if (input.includes("return")) {
+        return "We accept returns within 7 days. Please ensure the product is unused.";
+      } else if (input.includes("refund")) {
+        return "Refunds are processed within 5-7 business days after approval.";
+      } else if (input.includes("hello") || input.includes("hi")) {
+        return "Hi there! How can I assist you today?";
+      } else if (input.includes("payment")) {
+        return "We accept credit/debit cards, UPI, and wallets.";
+      } else if (input.includes("delivery") || input.includes("shipping")) {
+        return "Shipping usually takes 3–5 working days.";
+      } else {
+        const defaultReplies = [
+          "Thanks for reaching out! Let me check on that.",
+          "Our support team will get back to you shortly.",
+          "We've noted your query. Stay tuned for updates.",
+          "A retailer will reply soon. Is there anything else you'd like to add?"
+        ];
+        return defaultReplies[Math.floor(Math.random() * defaultReplies.length)];
+      }
+    };
+  
+    // Send message handler
+    function sendMessage() {
+      const messageText = userInput.value.trim();
+      if (messageText === '') return;
+  
+      db.collection("messages").add({
+        sender: "user",
+        text: messageText,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+  
+      userInput.value = '';
+  
+      // Respond after delay
+      setTimeout(() => {
+        const botReply = getBotReply(messageText);
+        db.collection("messages").add({
+          sender: "bot",
+          text: botReply,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+      }, 800);
     }
+  
+    // Toggle Theme
+    function toggleTheme() {
+      document.body.classList.toggle("light");
+      document.querySelector("header").classList.toggle("light");
+    }
+    function deleteChat() {
+  if (!confirm("Are you sure you want to delete the chat history?")) return;
+
+  db.collection("messages")
+    .get()
+    .then(snapshot => {
+      const batch = db.batch();
+      snapshot.forEach(doc => {
+        batch.delete(doc.ref);
+      });
+      return batch.commit();
+    })
+    .then(() => {
+      alert("Chat history deleted successfully.");
+    })
+    .catch(error => {
+      console.error("Error deleting chat: ", error);
+      alert("Something went wrong. Please try again.");
+    });
+}
+
   </script>
+3       
 </body>
 </html>
