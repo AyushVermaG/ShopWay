@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopWay - Electronics Store</title>
+    <link rel="stylesheet" href="1.css" />
+    <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">Shop<font color="aqua">Way</font></div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+      </div>
+      <nav>
+        <a href="index1.html"><button class="home-button">Home</button></a>
+        <a href="cart.html"><button class="cart-button">Cart</button></a>
+      </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="product-section">
+        <h1>Handmade & Art</h1>
+        <p>Explore a collection of unique and beautiful handmade artworks, pottery, and crafts.</p>
+      
+        <div class="product-grid">
+          <!-- Handmade Paintings -->
+          <div class="product-card">
+            <img src="https://cdn11.bigcommerce.com/s-x49po/images/stencil/1500x1500/products/127046/294037/handmade%2Fdownscaled%2Fh_vkripv8hqq_2000x2000__29187.1711454898.jpg?c=2" alt="Handmade Painting 1"width="350" height="350" />
+            <h3>Abstract Painting</h3>
+            <p class="price">Rs. 3,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Abstract Painting')">Buy Now</button>
+          </div>
+      
+          <!-- Handmade Pottery -->
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCvvzSpB2NbKjRUbaA-u_M28LhXGvlc_aNrA&s" alt="Handmade Pottery 1"width="350" height="350" />
+            <h3>Handcrafted Pottery Vase</h3>
+            <p class="price">Rs. 2,500</p>
+            <button class="buy-now-btn" onclick="buyNow('Handcrafted Pottery Vase')">Buy Now</button>
+          </div>
+      
+          <!-- Handmade Wooden Crafts -->
+          <div class="product-card">
+            <img src="https://yellowverandah.in/cdn/shop/products/Krishna_Wooden_Sculpture.jpg?v=1736168492" alt="Handmade Woodcraft 1" width="350" height="350"/>
+            <h3>Wooden Sculpture</h3>
+            <p class="price">Rs. 3,200</p>
+            <button class="buy-now-btn" onclick="buyNow('Wooden Sculpture')">Buy Now</button>
+          </div>
+      
+          <!-- Handmade Jewelry -->
+          <div class="product-card">
+            <img src="https://ishhaara.com/cdn/shop/files/ishhaara-multi-beaded-long-necklace-30095766749227.jpg?v=1710618131&width=1946" alt="Handmade Jewelry 1"width="350" height="350" />
+            <h3>Beaded Necklace</h3>
+            <p class="price">Rs. 1,500</p>
+            <button class="buy-now-btn" onclick="buyNow('Beaded Necklace')">Buy Now</button>
+          </div>
+      
+          <!-- Handmade Rugs -->
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhmjZutUvpXouHXFW-BpkltT6vWURav6jAGzvqrhR-mkvMEKT8IjIVwZcCDG_7tjzZRjE&usqp=CAU" alt="Handmade Rug 1" width="350" height="350"/>
+            <h3>Handwoven Woolen Rug</h3>
+            <p class="price">Rs. 5,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Handwoven Woolen Rug')">Buy Now</button>
+          </div>
+      
+          <!-- Handmade Candles -->
+          <div class="product-card">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/9/343794060/IQ/OX/MV/162796763/heer-scented-soy-wax-candle.jpg" alt="Handmade Candle 1" width="350" height="350"/>
+            <h3>Scented Soy Candle</h3>
+            <p class="price">Rs. 800</p>
+            <button class="buy-now-btn" onclick="buyNow('Scented Soy Candle')">Buy Now</button>
+          </div>
+      
+          <!-- Handmade Ceramic Art -->
+          <div class="product-card">
+            <img src="https://apisap.fabindia.com/medias/20175880-01.jpg?context=bWFzdGVyfGltYWdlc3wxMTc2MDB8aW1hZ2UvanBlZ3xhR0psTDJobFpDODBPRGM1TnpJM09ESTNNelUyTmk4eU1ERTNOVGc0TUY4d01TNXFjR2N8NzJjYWM4ODFlZWY0Y2I1NDMzNjRiMzgyZTIzMzBiYmFjZjg5NWNmYzVhMWIwYjVkMTMyMWVlZTFmYmJjM2YwOA" alt="Handmade Ceramic Art 1" width="350" height="350"/>
+            <h3>Handmade Ceramic Mug</h3>
+            <p class="price">Rs. 900</p>
+            <button class="buy-now-btn" onclick="buyNow('Handmade Ceramic Mug')">Buy Now</button>
+          </div>
+      
+          <!-- Handmade Leather Goods -->
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk0thZ-5RUh1CZo0q1a5wouf4kqpFR0cE06A&s" alt="Handmade Leather Goods 1" width="350" height="350"/>
+            <h3>Leather Wallet</h3>
+            <p class="price">Rs. 2,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Leather Wallet')">Buy Now</button>
+          </div>
+      
+          <!-- Handmade Tapestries -->
+          <div class="product-card">
+            <img src="https://i.pinimg.com/736x/27/c4/94/27c49420bc410223731e5d0ddc813aa4.jpg" alt="Handmade Tapestry 1" width="350" height="350"/>
+            <h3>Woven Wall Tapestry</h3>
+            <p class="price">Rs. 3,500</p>
+            <button class="buy-now-btn" onclick="buyNow('Woven Wall Tapestry')">Buy Now</button>
+          </div>
+      
+          <!-- Handmade Sculptures -->
+          <div class="product-card">
+            <img src="https://5.imimg.com/data5/SO/SK/KF/SELLER-59929875/stone20-thoomri-handmade-ganesha-statue-500x500.jpg" alt="Handmade Sculpture 1" width="350" height="350"/>
+            <h3>Stone Sculpture</h3>
+            <p class="price">Rs. 4,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Stone Sculpture')">Buy Now</button>
+          </div>
+      
+          <!-- Handmade Textiles -->
+          <div class="product-card">
+            <img src="https://wovensouls.com/cdn/shop/products/1229-antique-museum-quality-bhutan-handwoven-shawl.jpg?v=1633078546" alt="Handmade Textiles 1"width="350" height="350" />
+            <h3>Handwoven Textile Shawl</h3>
+            <p class="price">Rs. 2,200</p>
+            <button class="buy-now-btn" onclick="buyNow('Handwoven Textile Shawl')">Buy Now</button>
+          </div>
+      
+          <!-- Handmade Paper Crafts -->
+          <div class="product-card">
+            <img src="https://theheritageartifacts.com/cdn/shop/collections/cd12ad6924cd75b38c747fcb8950c757.jpg?v=1678684828" alt="Handmade Paper Crafts 1" width="350" height="350"/>
+            <h3>Bamboo Weave Crafts</h3>
+            <p class="price">Rs. 150</p>
+            <button class="buy-now-btn" onclick="buyNow('Bamboo Weave Crafts')">Buy Now</button>
+          </div>
+        </div>
+      </section>
+      
+      
+    <script>
+      function buyNow(productName) {
+        const confirmBuy = confirm(`Do you want to buy ${productName}?`);
+        if (confirmBuy) {
+          alert(`Redirecting to checkout for ${productName}...`);
+  
+        }
+      }
+    </script>
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      
+        <div class="footer-bottom">
+          &copy; 2025 ShopWay. All rights reserved.
+        </div>
+      </footer>
+  </body>
+</html>
