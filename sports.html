@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopWay - Electronics Store</title>
+    <link rel="stylesheet" href="1.css" />
+    <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">Shop<font color="aqua">Way</font></div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+      </div>
+      <nav>
+        <a href="index1.html"><button class="home-button">Home</button></a>
+        <a href="cart.html"><button class="cart-button">Cart</button></a>
+      </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="product-section">
+        <h1>Sports, Fitness & Outdoors</h1>
+        <p>Stay fit and active with our collection of sports and fitness gear for all levels.</p>
+      
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/51OJbiJrZIL.AC_UF894,1000_QL80.jpg" alt="Yoga Mat" width="350" height="350"/>
+            <h3>Reebok Yoga Mat</h3>
+            <p class="price">Rs. 799</p>
+            <button class="buy-now-btn" onclick="buyNow('Reebok Yoga Mat')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://leewayfitness.in/wp-content/uploads/2024/12/Bounce-Dumbbell-01.jpg" alt="Dumbbells" width="350" height="350"/>
+            <h3>Fitness Dumbbells Set</h3>
+            <p class="price">Rs. 1,200</p>
+            <button class="buy-now-btn" onclick="buyNow('Fitness Dumbbells Set')">Buy Now</button>
+          </div>
+          <div class="product-card">width="350" height="350"
+            <img src="https://m.media-amazon.com/images/I/71141ACQxGL.jpg" alt="Treadmill"width="350" height="350" />
+            <h3>ProForm Treadmill</h3>
+            <p class="price">Rs. 25,000</p>
+            <button class="buy-now-btn" onclick="buyNow('ProForm Treadmill')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://images-cdn.ubuy.co.in/667e300bd729ec51df61f682-spalding-nba-gold-indoor-outdoor.jpg" alt="Basketball" width="350" height="350"/>
+            <h3>Spalding Basketball</h3>
+            <p class="price">Rs. 899</p>
+            <button class="buy-now-btn" onclick="buyNow('Spalding Basketball')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71NC+BOxm4L.AC_UF894,1000_QL80.jpg" alt="Soccer Ball" width="350" height="350"/>
+            <h3>Adidas Soccer Ball</h3>
+            <p class="price">Rs. 999</p>
+            <button class="buy-now-btn" onclick="buyNow('Adidas Soccer Ball')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://wildcraft.com/media/catalog/product/3/_/3_1676.jpg?width=960" alt="Camping Tent"width="350" height="350" />
+            <h3>Wildcraft Camping Tent</h3>
+            <p class="price">Rs. 3,499</p>
+            <button class="buy-now-btn" onclick="buyNow('Wildcraft Camping Tent')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://rukminim3.flixcart.com/image/850/1000/xif0q/sleeping-bag/a/z/t/24-sizes-190-x-72-cm-full-length-zip-camping-sleeping-bag-original-imah38c9jwgphzac.jpeg?q=90&crop=false" alt="Sleeping Bag" width="350" height="350"/>
+            <h3>Quechua Sleeping Bag</h3>
+            <p class="price">Rs. 1,299</p>
+            <button class="buy-now-btn" onclick="buyNow('Quechua Sleeping Bag')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/51--Fsb1yvL.AC_UF1000,1000_QL80.jpg" alt="Fitness Band" width="350" height="350"/>
+            <h3>Mi Fitness Band</h3>
+            <p class="price">Rs. 2,999</p>
+            <button class="buy-now-btn" onclick="buyNow('Mi Fitness Band')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61Pvhbi+zlL.AC_UF894,1000_QL80.jpg" alt="Football"width="350" height="350" />
+            <h3>Nike Football</h3>
+            <p class="price">Rs. 1,200</p>
+            <button class="buy-now-btn" onclick="buyNow('Nike Football')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://contents.mediadecathlon.com/p1626121/502344e06b97040a25d7d50c160ac640/p1626121.jpg?format=auto&quality=70&f=2520x0" alt="Biking Gloves" width="350" height="350"/>
+            <h3>Decathlon Biking Gloves</h3>
+            <p class="price">Rs. 599</p>
+            <button class="buy-now-btn" onclick="buyNow('Decathlon Biking Gloves')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71iyLjZCUXL.AC_UY1100.jpg" alt="Gym Bag" width="350" height="350"/>
+            <h3>Adidas Gym Bag</h3>
+            <p class="price">Rs. 1,100</p>
+            <button class="buy-now-btn" onclick="buyNow('Adidas Gym Bag')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://rukminim2.flixcart.com/image/850/1000/kkyc9zk0/cycle/8/f/t/defender-27-5-17-hercules-single-speed-original-imagy6tzdfereguj.jpeg?q=90&crop=false" alt="Bicycle" width="350" height="350"/>
+            <h3>Hercules Mountain Bike</h3>
+            <p class="price">Rs. 10,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Hercules Mountain Bike')">Buy Now</button>
+          </div>
+        </div>
+      </section>
+      
+      
+      
+
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      
+        <div class="footer-bottom">
+          &copy; 2025 ShopWay. All rights reserved.
+        </div>
+      </footer>
+  </body>
+</html>
