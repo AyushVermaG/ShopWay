@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopWay - Electronics Store</title>
+    <link rel="stylesheet" href="1.css" />
+    <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">Shop<font color="aqua">Way</font></div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+      </div>
+      <nav>
+        <a href="index1.html"><button class="home-button">Home</button></a>
+        <a href="cart.html"><button class="cart-button">Cart</button></a>
+      </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="product-section">
+        <h1>Music, Movies & Gaming</h1>
+        <p>Shop the latest in music, movies, and gaming gear to keep you entertained.</p>
+      
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387700970i/667969.jpg" alt="Music Album" width="350" height="350"/>
+            <h3>Imagine - John Lennon</h3>
+            <p class="price">Rs. 399</p>
+            <button class="buy-now-btn" onclick="buyNow('Imagine - John Lennon')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71vHet70KnL.AC_UF1000,1000_QL80.jpg" alt="Movie DVD" width="350" height="350"/>
+            <h3>The Shawshank Redemption</h3>
+            <p class="price">Rs. 599</p>
+            <button class="buy-now-btn" onclick="buyNow('The Shawshank Redemption')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="http://m.media-amazon.com/images/I/81pyD0T+C9L.jpg" alt="Video Game"width="350" height="350" />
+            <h3>FIFA 23</h3>
+            <p class="price">Rs. 2,999</p>
+            <button class="buy-now-btn" onclick="buyNow('FIFA 23')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://i.ytimg.com/vi/2-fR2rrmw3I/maxresdefault.jpg" alt="Rock Album"width="350" height="350" />
+            <h3>Back in Black - AC/DC</h3>
+            <p class="price">Rs. 450</p>
+            <button class="buy-now-btn" onclick="buyNow('Back in Black - AC/DC')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/819K+rAh8UL.AC_UF1000,1000_QL80.jpg" alt="Movie DVD"width="350" height="350" />
+            <h3>Inception</h3>
+            <p class="price">Rs. 699</p>
+            <button class="buy-now-btn" onclick="buyNow('Inception')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202312/0117/315718bce7eed62e3cf3fb02d61b81ff1782d6b6cf850fa4.png" alt="Video Game" width="350" height="350"/>
+            <h3>The Last of Us Part II</h3>
+            <p class="price">Rs. 3,500</p>
+            <button class="buy-now-btn" onclick="buyNow('The Last of Us Part II')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71dQKN2UEfL.UF1000,1000_QL80.jpg" alt="Jazz Album" width="350" height="350"/>
+            <h3>Kind of Blue - Miles Davis</h3>
+            <p class="price">Rs. 399</p>
+            <button class="buy-now-btn" onclick="buyNow('Kind of Blue - Miles Davis')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/91PUQ1iGCLL.AC_UF1000,1000_QL80.jpg" alt="Movie DVD" width="350" height="350"/>
+            <h3>Gladiator</h3>
+            <p class="price">Rs. 699</p>
+            <button class="buy-now-btn" onclick="buyNow('Gladiator')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://image.api.playstation.com/vulcan/img/rnd/202008/1900/lTSvbByTYMqy6R22teoybKCg.png" alt="Video Game"width="350" height="350" />
+            <h3>Call of Duty: Modern Warfare II</h3>
+            <p class="price">Rs. 3,200</p>
+            <button class="buy-now-btn" onclick="buyNow('Call of Duty: Modern Warfare II')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSehTwsAGJT7iSgPdyf3j-GO-iF8TJ5IcW9RQ&s" alt="Classical Album" width="350" height="350"/>
+            <h3>Symphony No. 9 - Beethoven</h3>
+            <p class="price">Rs. 500</p>
+            <button class="buy-now-btn" onclick="buyNow('Symphony No. 9 - Beethoven')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUrBoCDVvX2VtIb8Xyqf1j81_zuLz3qxeiQg&s" alt="Movie DVD"width="350" height="350" />
+            <h3>Avatar</h3>
+            <p class="price">Rs. 799</p>
+            <button class="buy-now-btn" onclick="buyNow('Avatar')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202311/2812/ae84720b553c4ce943e9c342621b60f198beda0dbf533e21.jpg" alt="Video Game" width="350" height="350"/>
+            <h3>Cyberpunk 2077</h3>
+            <p class="price">Rs. 4,500</p>
+            <button class="buy-now-btn" onclick="buyNow('Cyberpunk 2077')">Buy Now</button>
+          </div>
+        </div>
+      </section>   
+ 
+    
+    
+
+    <!-- Footer -->
+    <<footer class="footer">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      
+        <div class="footer-bottom">
+          &copy; 2025 ShopWay. All rights reserved.
+        </div>
+      </footer>
+  </body>
+</html>
