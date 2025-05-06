@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopWay - Electronics Store</title>
+    <link rel="stylesheet" href="1.css" />
+    <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">Shop<font color="aqua">Way</font></div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+      </div>
+      <nav>
+        <a href="shopway.html"><button class="home-button">Home</button></a>
+        <a href="cart.html"><button class="cart-button">Cart</button></a>
+      </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="product-section">
+        <h1>Jewelry & Watches</h1>
+        <p>Discover our luxurious collection of jewelry and watches for every occasion.</p>
+      
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://jewellerykhazana.com/wp-content/uploads/2024/10/Your-paragraph-text-33.jpg" alt="Gold Necklace" width="350" height="350"/>
+            <h3>Gold Necklace</h3>
+            <p class="price">Rs. 1,00,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Gold Necklace')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHCWPBKV1ShMo5696tNTWtM8hofSSKdWvC-g&s" alt="Diamond Ring"width="350" height="350" />
+            <h3>Diamond Ring</h3>
+            <p class="price">Rs. 65,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Diamond Ring')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61s6thrSrJL.jpg" alt="Silver Bracelet" width="350" height="350"/>
+            <h3>Silver Bracelet</h3>
+            <p class="price">Rs. 10,500</p>
+            <button class="buy-now-btn" onclick="buyNow('Silver Bracelet')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71ZmSMsy4IL._AC_UY1000_.jpg" alt="Luxury Wristwatch"width="350" height="350" />
+            <h3>Luxury Wristwatch</h3>
+            <p class="price">Rs. 18,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Luxury Wristwatch')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.chidambaramgoldcovering.com/image/cache/catalog/ChidambaramGoldCovering/earrings/er4052-new-two-gram-gold-stud-earring-shop-online-1a-600x315w.jpg" alt="Gold Earrings" width="350" height="350"/>
+            <h3>Gold Earrings</h3>
+            <p class="price">Rs. 12,500</p>
+            <button class="buy-now-btn" onclick="buyNow('Gold Earrings')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.giva.co/cdn/shop/files/AVPD0159_1.jpg?v=1711632332" alt="Silver Pendant" width="350" height="350"/>
+            <h3>Silver Pendant</h3>
+            <p class="price">Rs. 5,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Silver Pendant')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.onlinepng.com/cdn/shop/files/CH-928725-1.jpg?v=1719396928" alt="Gold Chain"width="350" height="350" />
+            <h3>Gold Chain</h3>
+            <p class="price">Rs. 1,20,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Gold Chain')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://images-cdn.ubuy.co.in/66077f1f58c24a6858540d53-metal-masters-womens-1-25-ct-wedding.jpg" alt="Wedding Ring"width="350" height="350" />
+            <h3>Wedding Ring</h3>
+            <p class="price">Rs. 70,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Wedding Ring')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71ycDbs2cPL.jpg" alt="Charm Bracelet"width="350" height="350" />
+            <h3>Charm Bracelet</h3>
+            <p class="price">Rs. 5,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Charm Bracelet')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNgc38qZ51H9A5itp85FKEXU71gNwNf3cVg&s" alt="Digital Watch"width="350" height="350" />
+            <h3>Diamond Bangle</h3>
+            <p class="price">Rs. 10,800</p>
+            <button class="buy-now-btn" onclick="buyNow('Diamond Bangle')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfX4vZizVjgB9K63imvh7FOKNvbeTSz39G6A&s" alt="Crystal Necklace"width="350" height="350" />
+            <h3>Crystal Necklace</h3>
+            <p class="price">Rs. 8,500</p>
+            <button class="buy-now-btn" onclick="buyNow('Crystal Necklace')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWjpo0LTRVqWd63yPcgd-vXS2e1tjvMbJN5A&s" alt="Diamond Watch" width="350" height="350"/>
+            <h3>Diamond Watch</h3>
+            <p class="price">Rs. 1,50,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Diamond Watch')">Buy Now</button>
+          </div>
+        </div>
+      </section>
+      
+      
+    <script>
+      function buyNow(productName) {
+        const confirmBuy = confirm(`Do you want to buy ${productName}?`);
+        if (confirmBuy) {
+          alert(`Redirecting to checkout for ${productName}...`);
+          // Optionally redirect to a checkout page
+          // window.location.href = 'checkout.html?product=' + encodeURIComponent(productName);
+        }
+      }
+    </script>
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      
+        <div class="footer-bottom">
+          &copy; 2025 ShopWay. All rights reserved.
+        </div>
+      </footer>
+  </body>
+</html>
