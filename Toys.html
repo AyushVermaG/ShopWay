@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopWay - Electronics Store</title>
+    <link rel="stylesheet" href="1.css" />
+    <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">Shop<font color="aqua">Way</font></div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+      </div>
+      <nav>
+        <a href="shopway.html"><button class="home-button">Home</button></a>
+        <a href="cart.html"><button class="cart-button">Cart</button></a>
+      </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="product-section">
+        <h1>Toys, Kids & Baby Products</h1>
+        <p>Explore a wide range of toys and baby essentials for the little ones.</p>
+      
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/717vmR2p1OL._AC_UF1000,1000_QL80_.jpg" alt="Toy Car" width="350" height="350"/>
+            <h3>Hot Wheels Car Set</h3>
+            <p class="price">Rs. 499</p>
+            <button class="buy-now-btn" onclick="buyNow('Hot Wheels Car Set')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKVmOLde4mPBW9Cu066iY5OEmLHAvPcJnMwA&s" alt="Doll" width="350" height="350" />
+            <h3>Barbie Doll</h3>
+            <p class="price">Rs. 799</p>
+            <button class="buy-now-btn" onclick="buyNow('Barbie Doll')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXpUAAm0FxUuBKKw6zu2EuVWNeaIBwSCZsdw&s" alt="Lego Set" width="350" height="350"/>
+            <h3>LEGO Building Set</h3>
+            <p class="price">Rs. 1,200</p>
+            <button class="buy-now-btn" onclick="buyNow('LEGO Building Set')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://rukminim2.flixcart.com/image/850/1000/ksw4ccw0/stuffed-toy/l/i/1/avshub-3-feet-big-teddy-bear-cute-giant-stuffed-animals-soft-original-imag6dy7zved6yww.jpeg?q=20&crop=false" alt="Teddy Bear" width="350" height="350"/>
+            <h3>Giant Teddy Bear</h3>
+            <p class="price">Rs. 1,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Giant Teddy Bear')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0S2f4JZDFAPfcouWH9hJzHxOuowW7LPZoRA&s" alt="Tricycle"width="350" height="350" />
+            <h3>Kids Tricycle</h3>
+            <p class="price">Rs. 2,500</p>
+            <button class="buy-now-btn" onclick="buyNow('Kids Tricycle')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61qFQngyIOL.jpg" alt="Baby Walker" width="350" height="350"/>
+            <h3>Baby Walker</h3>
+            <p class="price">Rs. 1,600</p>
+            <button class="buy-now-btn" onclick="buyNow('Baby Walker')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71bGg5kjh9L._AC_UF1000,1000_QL80_.jpg" alt="Board Game"width="350" height="350" />
+            <h3>Monopoly Board Game</h3>
+            <p class="price">Rs. 1,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Monopoly Board Game')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://media.hunyhuny.com/11523-large_default/Best-Baby-Cot-Bed-Online-Portable-Foldable-Travel-Bassinet-cot-am818.jpg" alt="Baby Crib" width="350" height="350"/>
+            <h3>Portable Baby Crib</h3>
+            <p class="price">Rs. 3,500</p>
+            <button class="buy-now-btn" onclick="buyNow('Portable Baby Crib')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71qzqleYLeL._AC_UF1000,1000_QL80_.jpg" alt="Educational Toy"width="350" height="350" />
+            <h3>Fun Learning Blocks</h3>
+            <p class="price">Rs. 600</p>
+            <button class="buy-now-btn" onclick="buyNow('Fun Learning Blocks')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://images-cdn.ubuy.co.in/67cad7514c7a71467c1b67e4-etna-wood-peg-puzzle-set-with-6-puzzles.jpg" alt="Puzzle" width="350" height="350"/>
+            <h3>Wooden Puzzle Set</h3>
+            <p class="price">Rs. 350</p>
+            <button class="buy-now-btn" onclick="buyNow('Wooden Puzzle Set')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxhPV4Sc1BRk503r3LLXu26qxARJPqeTyrxA&s" alt="Scooter" width="350" height="350"/>
+            <h3>Kids Scooter</h3>
+            <p class="price">Rs. 1,200</p>
+            <button class="buy-now-btn" onclick="buyNow('Kids Scooter')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://images-cdn.ubuy.co.in/6611110ca2dda65924422394-gerber-2nd-foods-natural-for-baby-fruit.jpg" alt="Baby Food" width="350" height="350"/>
+            <h3>Gerber Baby Food Pack</h3>
+            <p class="price">Rs. 299</p>
+            <button class="buy-now-btn" onclick="buyNow('Gerber Baby Food Pack')">Buy Now</button>
+          </div>
+        </div>
+      </section>
+      
+      
+
+      
+      
+    <script>
+      function buyNow(productName) {
+        const confirmBuy = confirm(`Do you want to buy ${productName}?`);
+        if (confirmBuy) {
+          alert(`Redirecting to checkout for ${productName}...`);
+          // Optionally redirect to a checkout page
+          // window.location.href = 'checkout.html?product=' + encodeURIComponent(productName);
+        }
+      }
+    </script>
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      
+        <div class="footer-bottom">
+          &copy; 2025 ShopWay. All rights reserved.
+        </div>
+      </footer>
+  </body>
+</html>
