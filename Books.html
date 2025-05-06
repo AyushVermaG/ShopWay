@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopWay - Electronics Store</title>
+    <link rel="stylesheet" href="1.css" />
+    <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">Shop<font color="aqua">Way</font></div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+      </div>
+      <nav>
+        <a href="shopway.html"><button class="home-button">Home</button></a>
+        <a href="cart.html"><button class="cart-button">Cart</button></a>
+      </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="product-section">
+        <h1>Books & Audible</h1>
+        <p>Explore our collection of best-selling books and audiobooks for every reader.</p>
+      
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/81TLiZrasVL.UF1000,1000_QL80.jpg" alt="Book 1"width="350" height="350"  />
+            <h3>The Great Gatsby</h3>
+            <p class="price">Rs. 399</p>
+            <button class="buy-now-btn" onclick="buyNow('The Great Gatsby')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/81F90H7hnML.jpg" alt="Book 2"width="350" height="350"  />
+            <h3>Atomic Habits</h3>
+            <p class="price">Rs. 499</p>
+            <button class="buy-now-btn" onclick="buyNow('Atomic Habits')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/81KGjsBXQ7L.AC_UF1000,1000_QL80.jpg" alt="Book 3" width="350" height="350" />
+            <h3>Becoming</h3>
+            <p class="price">Rs. 799</p>
+            <button class="buy-now-btn" onclick="buyNow('Becoming')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://cdn.kobo.com/book-images/32ad8373-9cc5-4c4f-aa82-8155edbc7029/1200/1200/False/the-alchemist-a-graphic-novel.jpg" alt="Book 4" width="350" height="350" />
+            <h3>The Alchemist</h3>
+            <p class="price">Rs. 350</p>
+            <button class="buy-now-btn" onclick="buyNow('The Alchemist')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71-4MkLN5jL.AC_UF1000,1000_QL80.jpg" alt="Book 5" width="350" height="350" />
+            <h3>Educated</h3>
+            <p class="price">Rs. 450</p>
+            <button class="buy-now-btn" onclick="buyNow('Educated')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/81e+mSqZvnL.AC_UF1000,1000_QL80.jpg" alt="Book 6"width="350" height="350"  />
+            <h3>Where the Crawdads Sing</h3>
+            <p class="price">Rs. 550</p>
+            <button class="buy-now-btn" onclick="buyNow('Where the Crawdads Sing')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/S/pv-target-images/d14d8b877114758a1ffea320f34ae6abb28273449cdd13f0c24bd15bd9bf9651.jpg" alt="Book 7" width="350" height="350" />
+            <h3>Untamed</h3>
+            <p class="price">Rs. 399</p>
+            <button class="buy-now-btn" onclick="buyNow('Untamed')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71VOI-r3IKL.AC_UF1000,1000_QL80.jpg" alt="Book 8" width="350" height="350" />
+            <h3>My Journey </h3>
+            <p class="price">Rs. 350</p>
+            <button class="buy-now-btn" onclick="buyNow('My Journey')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71LhjimPd8L.jpg" alt="Book 9"width="350" height="350"  />
+            <h3>Good to Great</h3>
+            <p class="price">Rs. 450</p>
+            <button class="buy-now-btn" onclick="buyNow('Good to Great')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/81BE7eeKzAL.jpg" alt="Book 10" width="350" height="350" />
+            <h3>Rich Dad Poor Dad</h3>
+            <p class="price">Rs. 299</p>
+            <button class="buy-now-btn" onclick="buyNow('Rich Dad Poor Dad')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71vO9Tbf4-L.jpg" alt="Book 11" width="350" height="350" />
+            <h3>The 4-Hour Workweek</h3>
+            <p class="price">Rs. 499</p>
+            <button class="buy-now-btn" onclick="buyNow('The 4-Hour Workweek')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5NwZHJBjXZAUxzOz-DAlBUe2TBfWzyAl3yQ&s" alt="Book 12" width="350" height="350" />
+            <h3>The Power of Habit</h3>
+            <p class="price">Rs. 350</p>
+            <button class="buy-now-btn" onclick="buyNow('The Power of Habit')">Buy Now</button>
+          </div>
+        </div>
+      </section>
+      
+      
+
+      
+      
+
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      
+        <div class="footer-bottom">
+          &copy; 2025 ShopWay. All rights reserved.
+        </div>
+      </footer>
+  </body>
+</html>
