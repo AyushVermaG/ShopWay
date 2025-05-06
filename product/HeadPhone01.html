@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="ShopWay - Wireless Headphones with Bluetooth, Deep Bass & Modern Design. Rated 4.2/5 by 1245 customers.">
   <title>Product Page - Wireless Headphones - ShopWay</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Your existing dark theme CSS -->
+  <link rel="stylesheet" href="styles.css">
   <style>
     body {
       background-color: #121212;
@@ -162,7 +162,7 @@
       margin-bottom: 1rem;
     }
 
-    textarea, input[type="text"] {
+    textarea, input[type="text"], select {
       width: 100%;
       padding: 0.5rem;
       margin: 0.5rem 0;
@@ -183,6 +183,11 @@
     .dashboard-content p {
       color: #ccc;
     }
+
+    .hidden {
+  display: none;
+}
+
   </style>
 </head>
 <body>
@@ -220,6 +225,33 @@
         <button class="btn" onclick="addToCart('Wireless Headphones')">Add to Cart</button>
         <button class="primary-btn" onclick="buyNow()">Buy Now</button>
       </div>
+
+      <div id="deliveryOptions" class="hidden dashboard-content">
+        <h3>Select Delivery Option:</h3>
+        <select id="deliveryMethod">
+          <option value="standard">Standard (3-5 days)</option>
+          <option value="express">Express (1-2 days)</option>
+          <option value="overnight">Overnight</option>
+        </select>
+        <br><br>
+        <button class="btn" id="proceedToPayment">Proceed to Payment</button>
+      </div>
+      
+      <div id="paymentGateway" class="hidden dashboard-content">
+        <h3>Choose Payment Method:</h3>
+        <input type="radio" name="payment" value="credit" checked> Credit Card<br>
+        <input type="radio" name="payment" value="debit"> Debit Card<br>
+        <input type="radio" name="payment" value="upi"> UPI<br>
+        <input type="radio" name="payment" value="debit"> Cash On Delivery<br>
+        <button class="btn" id="payNow">Confirm Order</button>
+      </div>
+      
+      <div id="orderConfirmation" class="hidden dashboard-content">
+        <h3>Order Confirmed!</h3>
+        <p>Your order has been placed successfully.</p>
+      </div>
+      
+      
     </div>
   </div>
 
@@ -229,12 +261,12 @@
 
     <div id="reviewList">
       <div class="dashboard-content">
-        <h3>Ajay Kumar <span class="star-rating">⭐️⭐️⭐️⭐️</span></h3>
+        <h3>Adarsh <span class="star-rating">⭐️⭐️⭐️⭐️</span></h3>
         <p>Great sound quality and noise cancellation. Comfortable for long listening sessions.</p>
       </div>
 
       <div class="dashboard-content">
-        <h3>Neha Sharma <span class="star-rating">⭐️⭐️⭐️</span></h3>
+        <h3>Aman <span class="star-rating">⭐️⭐️⭐️</span></h3>
         <p>The headphones are good but could have better battery life. Overall, decent quality.</p>
       </div>
     </div>
@@ -245,6 +277,18 @@
       <form onsubmit="submitReview(); return false;">
         <input type="text" placeholder="Your Name" id="reviewerName" required>
         <textarea placeholder="Write your review..." id="reviewText" rows="4" required></textarea>
+
+        <label for="starRating" style="color:#ccc;">Your Rating:</label>
+        <select id="starRating" required>
+          <option value="">--Select--</option>
+          <option value="⭐️">⭐️</option>
+          <option value="⭐️⭐️">⭐️⭐️</option>
+          <option value="⭐️⭐️⭐️">⭐️⭐️⭐️</option>
+          <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
+          <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
+        </select>
+
+        <p id="formMessage" style="color: #ff5722; font-size: 0.9rem;"></p>
         <button class="btn" type="submit">Submit Review</button>
       </form>
     </div>
@@ -257,28 +301,46 @@
     }
 
     function buyNow() {
-      alert("Redirecting to payment gateway...");
-    }
+  document.getElementById("deliveryOptions").classList.remove("hidden");
+  document.querySelector(".primary-btn").classList.add("hidden");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const proceedToPayment = document.getElementById("proceedToPayment");
+  const payNow = document.getElementById("payNow");
+
+  proceedToPayment.addEventListener("click", () => {
+    document.getElementById("deliveryOptions").classList.add("hidden");
+    document.getElementById("paymentGateway").classList.remove("hidden");
+  });
+
+  payNow.addEventListener("click", () => {
+    document.getElementById("paymentGateway").classList.add("hidden");
+    document.getElementById("orderConfirmation").classList.remove("hidden");
+  });
+});
+
 
     function submitReview() {
       const name = document.getElementById('reviewerName').value.trim();
       const text = document.getElementById('reviewText').value.trim();
+      const stars = document.getElementById('starRating').value;
+      const message = document.getElementById('formMessage');
 
-      if (name && text) {
-        const newReview = {
-          name: name,
-          text: text,
-          stars: "⭐️⭐️⭐️⭐️"
-        };
-
-        addReviewToPage(newReview);
-        saveReviewToLocal(newReview);
-
-        document.getElementById('reviewerName').value = "";
-        document.getElementById('reviewText').value = "";
-      } else {
-        alert("Please fill in your name and review.");
+      if (!name || !text || !stars) {
+        message.textContent = "Please fill in all fields including your rating.";
+        return;
       }
+
+      const newReview = { name, text, stars };
+      addReviewToPage(newReview);
+      saveReviewToLocal(newReview);
+
+      // Reset form
+      document.getElementById('reviewerName').value = "";
+      document.getElementById('reviewText').value = "";
+      document.getElementById('starRating').value = "";
+      message.textContent = "";
     }
 
     function addReviewToPage(review) {
@@ -302,7 +364,6 @@
       reviews.forEach(addReviewToPage);
     }
 
-    // Load saved reviews on page load
     window.onload = loadSavedReviews;
   </script>
 
