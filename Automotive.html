@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopWay - Electronics Store</title>
+    <link rel="stylesheet" href="1.css" />
+    <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">Shop<font color="aqua">Way</font></div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+      </div>
+      <nav>
+        <a href="shopway.html"><button class="home-button">Home</button></a>
+        <a href="cart.html"><button class="cart-button">Cart</button></a>
+      </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="product-section">
+        <h1>Automotive</h1>
+        <p>Browse our automotive collection for car accessories, tools, and gadgets to keep your vehicle in top shape.</p>
+      
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61nm+VaY3PL._AC_UF1000,1000_QL80_.jpg" alt="Car Jack"width="350" height="350" />
+            <h3>Hydraulic Car Jack</h3>
+            <p class="price">Rs. 1,200</p>
+            <button class="buy-now-btn" onclick="buyNow('Hydraulic Car Jack')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61dOG6XQ5vL._AC_UF1000,1000_QL80_.jpg" alt="Car Cover" width="350" height="350"/>
+            <h3>Waterproof Car Cover</h3>
+            <p class="price">Rs. 1,500</p>
+            <button class="buy-now-btn" onclick="buyNow('Waterproof Car Cover')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwweAo5RjQqVUchwAoMBPkXPBot-kgCBubsA&s" alt="Tire Pump" width="350" height="350"/>
+            <h3>Digital Tire Inflator</h3>
+            <p class="price">Rs. 1,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Digital Tire Inflator')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://carhatke.com/image/cache/catalog/seat/car-seat-cover-coffee-and-black-350x350.jpg" alt="Seat Cover" width="350" height="350"/>
+            <h3>Leather Seat Covers</h3>
+            <p class="price">Rs. 2,500</p>
+            <button class="buy-now-btn" onclick="buyNow('Leather Seat Covers')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/81m9rJG-0-L._AC_UF1000,1000_QL80_.jpg" alt="Car Wash"width="350" height="350" />
+            <h3>Car Cleaning Kit</h3>
+            <p class="price">Rs. 1,200</p>
+            <button class="buy-now-btn" onclick="buyNow('Car Cleaning Kit')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71XKOI+Cn5L.jpg" alt="Dashboard Camera"width="350" height="350" />
+            <h3>4K Dashboard Camera</h3>
+            <p class="price">Rs. 4,000</p>
+            <button class="buy-now-btn" onclick="buyNow('4K Dashboard Camera')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61L1feKQNFL.jpg" alt="Phone Mount"width="350" height="350" />
+            <h3>Magnetic Phone Mount</h3>
+            <p class="price">Rs. 599</p>
+            <button class="buy-now-btn" onclick="buyNow('Magnetic Phone Mount')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0PwfFnZ7-1mJ1Yd0lMyt_nZWxVcl5tMkdwrtDBrKAl_RKOZiFmRxj_NmlRgPuHqPePKg&usqp=CAU" alt="Car Organizer" width="350" height="350" />
+            <h3>Car Seat Organizer</h3>
+            <p class="price">Rs. 800</p>
+            <button class="buy-now-btn" onclick="buyNow('Car Seat Organizer')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://treknride.com/wp-content/uploads/2022/02/cross-bar4.jpg" alt="Roof Rack" width="350" height="350" />
+            <h3>Car Roof Rack</h3>
+            <p class="price">Rs. 3,500</p>
+            <button class="buy-now-btn" onclick="buyNow('Car Roof Rack')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://rukminim2.flixcart.com/image/850/1000/jz5vjbk0/vehicle-battery/2/w/t/exd8821-exide-original-imafj8hy6dp9hqjy.jpeg?q=90&crop=false" alt="Car Battery" width="350" height="350" />
+            <h3>Exide Car Battery</h3>
+            <p class="price">Rs. 6,000</p>
+            <button class="buy-now-btn" onclick="buyNow('Exide Car Battery')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSysHpv849WVls30zkuJmdUf4XeijJSdJl9ig&s" alt="Car Sunshade" width="350" height="350" />
+            <h3>Car Sunshade</h3>
+            <p class="price">Rs. 350</p>
+            <button class="buy-now-btn" onclick="buyNow('Car Sunshade')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://149881442.v2.pressablecdn.com/wp-content/uploads/2022/07/car-polishing-products.jpeg" alt="Car Wax" width="350" height="350"  />
+            <h3>Car Wax Polish</h3>
+            <p class="price">Rs. 600</p>
+            <button class="buy-now-btn" onclick="buyNow('Car Wax Polish')">Buy Now</button>
+          </div>
+        </div>
+      </section>
+      
+      
+      
+    <script>
+      function buyNow(productName) {
+        const confirmBuy = confirm(`Do you want to buy ${productName}?`);
+        if (confirmBuy) {
+          alert(`Redirecting to checkout for ${productName}...`);
+          // Optionally redirect to a checkout page
+          // window.location.href = 'checkout.html?product=' + encodeURIComponent(productName);
+        }
+      }
+    </script>
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      
+        <div class="footer-bottom">
+          &copy; 2025 ShopWay. All rights reserved.
+        </div>
+      </footer>
+  </body>
+</html>
+
