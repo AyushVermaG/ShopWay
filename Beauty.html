@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopWay - Electronics Store</title>
+    <link rel="stylesheet" href="1.css" />
+    <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">Shop<font color="aqua">Way</font></div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+      </div>
+      <nav>
+        <a href="index1.html"><button class="home-button">Home</button></a>
+        <a href="cart.html"><button class="cart-button">Cart</button></a>
+      </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="product-section">
+        <h1>Beauty & Personal Care</h1>
+        <p>Discover skincare, haircare, and personal grooming products to feel your best.</p>
+      
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61szHmyNAPL.AC_UF1000,1000_QL80.jpg" alt="Face Wash"width="350" height="350" width="350" height="350" />
+            <h3>Himalaya Neem Face Wash</h3>
+            <p class="price">Rs. 199</p>
+            <button class="buy-now-btn" onclick="buyNow('Himalaya Neem Face Wash')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/51waCGsAiSL.jpg" alt="Shampoo"width="350" height="350" />
+            <h3>Head & Shoulders Shampoo</h3>
+            <p class="price">Rs. 349</p>
+            <button class="buy-now-btn" onclick="buyNow('Head & Shoulders Shampoo')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/41bsrBAO0ML.AC_UF1000,1000_QL80.jpg" alt="Body Lotion" width="350" height="350"/>
+            <h3>Nivea Body Lotion</h3>
+            <p class="price">Rs. 275</p>
+            <button class="buy-now-btn" onclick="buyNow('Nivea Body Lotion')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/CIW/2024/3/9/88c6845b-b861-4b13-a248-3793d665a617_lipbalm_V1DLQ5X9ZS_MN.png" alt="Lip Balm"width="350" height="350" />
+            <h3>Maybelline Lip Balm</h3>
+            <p class="price">Rs. 150</p>
+            <button class="buy-now-btn" onclick="buyNow('Maybelline Lip Balm')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/616itGWD8YL.jpg" alt="Face Cream"width="350" height="350" />
+            <h3>Olay Total Effects Cream</h3>
+            <p class="price">Rs. 599</p>
+            <button class="buy-now-btn" onclick="buyNow('Olay Total Effects Cream')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20250221/YHmf/67b812f32960820c499aa1a7/-473Wx593H-4916069970-n340neutralalmond-MODEL.jpg" alt="Foundation" width="350" height="350"/>
+            <h3>Lakme Foundation</h3>
+            <p class="price">Rs. 475</p>
+            <button class="buy-now-btn" onclick="buyNow('Lakme Foundation')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61YNB13-F9L.jpg" alt="Trimmer"width="350" height="350" />
+            <h3>Philips Beard Trimmer</h3>
+            <p class="price">Rs. 1,499</p>
+            <button class="buy-now-btn" onclick="buyNow('Philips Beard Trimmer')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://havells.com/media/catalog/product/cache/844a913d283fe95e56e39582c5f2767b/1/2/1200x1200_havels_day10655_copy.jpg" alt="Hair Dryer" width="350" height="350"/>
+            <h3>Havells Hair Dryer</h3>
+            <p class="price">Rs. 999</p>
+            <button class="buy-now-btn" onclick="buyNow('Havells Hair Dryer')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://shop.lakmesalon.in/cdn/shop/files/black1.jpg?v=1742203979&width=1445" alt="Eyeliner"width="350" height="350" />
+            <h3>Lakme Insta Liner</h3>
+            <p class="price">Rs. 120</p>
+            <button class="buy-now-btn" onclick="buyNow('Lakme Insta Liner')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.colorbarcosmetics.com/media/catalog/product/v/a/vanilla1_lft6dk5o1nbkkcdv.jpg" alt="Nail Paint" width="350" height="350"/>
+            <h3>Colorbar Nail Lacquer</h3>
+            <p class="price">Rs. 199</p>
+            <button class="buy-now-btn" onclick="buyNow('Colorbar Nail Lacquer')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRvtw0gSQtSB6Zz-lw7J-lNkilKB5-nRRUwQ&s" alt="Perfume"width="350" height="350" />
+            <h3>Fogg Fragrance</h3>
+            <p class="price">Rs. 499</p>
+            <button class="buy-now-btn" onclick="buyNow('Fogg Fragrance')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/51ExJeIu-UL.jpg" alt="Sunscreen"width="350" height="350" />
+            <h3>Lotus Herbal Sunscreen SPF 50</h3>
+            <p class="price">Rs. 325</p>
+            <button class="buy-now-btn" onclick="buyNow('Lotus Herbal Sunscreen SPF 50')">Buy Now</button>
+          </div>
+        </div>
+      </section>
+      
+      
+      
+    <script>
+      function buyNow(productName) {
+        const confirmBuy = confirm(Do you want to buy ${productName}?);
+        if (confirmBuy) {
+          alert(Redirecting to checkout for ${productName}...);
+          // Optionally redirect to a checkout page
+          // window.location.href = 'checkout.html?product=' + encodeURIComponent(productName);
+        }
+      }
+    </script>
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      
+        <div class="footer-bottom">
+          &copy; 2025 ShopWay. All rights reserved.
+        </div>
+      </footer>
+  </body>
+</html>
