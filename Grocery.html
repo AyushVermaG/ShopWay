@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopWay - Electronics Store</title>
+   
+    <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">Shop<font color="aqua">Way</font></div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+      </div>
+      <nav>
+        <a href="index1.html"><button class="home-button">Home</button></a>
+        <a href="cart.html"><button class="cart-button">Cart</button></a>
+      </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="product-section">
+        <h1>Grocery & Gourmet</h1>
+        <p>Stock up your kitchen with premium grocery items and everyday essentials.</p>
+      
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71v0fCOgbjL.AC_UF894,1000_QL80.jpg" alt="Basmati Rice" width="350" height="350"/>
+            <h3>India Gate Basmati Rice 5kg</h3>
+            <p class="price">Rs. 599</p>
+            <button class="buy-now-btn" onclick="buyNow('India Gate Basmati Rice')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.bigbasket.com/media/uploads/p/xl/126903_12-aashirvaad-atta-whole-wheat.jpg" alt="Wheat Flour"width="350" height="350" />
+            <h3>Aashirvaad Atta 5kg</h3>
+            <p class="price">Rs. 280</p>
+            <button class="buy-now-btn" onclick="buyNow('Aashirvaad Atta')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/413va35IGxL.jpg" alt="Cooking Oil"width="350" height="350" />
+            <h3>Sundrop Sunflower Oil 1L</h3>
+            <p class="price">Rs. 160</p>
+            <button class="buy-now-btn" onclick="buyNow('Sundrop Oil')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.tatanutrikorner.com/cdn/shop/files/5109sLDpkvL._SL1000-removebg-preview.png?v=1745575165" alt="Tea" width="350" height="350"/>
+            <h3>Tata Tea Gold 1kg</h3>
+            <p class="price">Rs. 490</p>
+            <button class="buy-now-btn" onclick="buyNow('Tata Tea Gold')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.bigbasket.com/media/uploads/p/xl/100012354_30-britannia-bourbon-chocolate-cream-biscuits.jpg" alt="Biscuits"width="350" height="350" />
+            <h3>Bourborn Biscuits (Pack of 10)</h3>
+            <p class="price">Rs. 120</p>
+            <button class="buy-now-btn" onclick="buyNow('ourborn Biscuits')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.bigbasket.com/media/uploads/p/l/244096_6-madhur-sugar-refined.jpg" alt="Sugar"width="350" height="350" />
+            <h3>Madhur Sugar 1kg</h3>
+            <p class="price">Rs. 48</p>
+            <button class="buy-now-btn" onclick="buyNow('Madhur Sugar')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.jiomart.com/images/product/original/490563304/del-monte-penne-rigate-pasta-500-g-product-images-o490563304-p490563304-0-202406181829.jpg?im=Resize=(420,420)" alt="Pasta" width="350" height="350"/>
+            <h3>Del Monte Pasta 500g</h3>
+            <p class="price">Rs. 99</p>
+            <button class="buy-now-btn" onclick="buyNow('Del Monte Pasta')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAle-Ov-TpcQuwd7VChmMo-QBQ0EN697iTNA&s" alt="Toor Dal"width="350" height="350" />
+            <h3>Organic Toor Dal 1kg</h3>
+            <p class="price">Rs. 150</p>
+            <button class="buy-now-btn" onclick="buyNow('Organic Toor Dal')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://frugivore-bucket.s3.amazonaws.com/media/package/img_one/2019-09-19/Dairy_Milk_Silk_60_Gm_1.jpg" alt="Chocolate"width="350" height="350" />
+            <h3>Cadbury Dairy Milk Silk</h3>
+            <p class="price">Rs. 180</p>
+            <button class="buy-now-btn" onclick="buyNow('Cadbury Silk')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2t0IJyWdLn-5HQHIlFUfDSE-qJJGf3pRt_w&s" alt="Coffee"width="350" height="350" />
+            <h3>Nescafé Classic Coffee 100g</h3>
+            <p class="price">Rs. 299</p>
+            <button class="buy-now-btn" onclick="buyNow('Nescafé Coffee')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.bbassets.com/media/uploads/p/xl/214784_5-amul-amul-pure-ghee-1-l.jpg" alt="Ghee"width="350" height="350" />
+            <h3>Amul Pure Ghee 1L</h3>
+            <p class="price">Rs. 520</p>
+            <button class="buy-now-btn" onclick="buyNow('Amul Ghee')">Buy Now</button>
+          </div>
+          <div class="product-card">
+            <img src="https://rukminim3.flixcart.com/image/850/1000/ki214sw0-0/drinks-juice/h/t/u/1000-mixed-fruit-juice-1-ltr-tetrapack-real-original-imafxxhzzfwem6ht.jpeg?q=90&crop=false" alt="Fruit Juice"width="350" height="350" />
+            <h3>Real Mixed Fruit Juice 1L</h3>
+            <p class="price">Rs. 110</p>
+            <button class="buy-now-btn" onclick="buyNow('Real Fruit Juice')">Buy Now</button>
+          </div>
+        </div>
+      </section>
+      
+
+      
+      
+    <script>
+      function buyNow(productName) {
+        const confirmBuy = confirm(Do you want to buy ${productName}?);
+        if (confirmBuy) {
+          alert(Redirecting to checkout for ${productName}...);
+          // Optionally redirect to a checkout page
+          // window.location.href = 'checkout.html?product=' + encodeURIComponent(productName);
+        }
+      }
+    </script>
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      
+        <div class="footer-bottom">
+          &copy; 2025 ShopWay. All rights reserved.
+        </div>
+      </footer>
+  </body>
+</html>
