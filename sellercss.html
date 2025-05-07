@@ -6,13 +6,10 @@
   <title>ShopWay Seller Dashboard</title>
   <link rel="stylesheet" href="ShopWay.css" />
   <style>
-    /* Seller Dashboard Styles */
     :root {
       --card-bg: #222;
       --text-light: #ccc;
       --text-dark: #111;
-      --btn-bg: #444;
-      --btn-hover: #666;
     }
 
     body {
@@ -50,6 +47,10 @@
       padding: 0;
     }
 
+    nav ul li {
+      position: relative;
+    }
+
     nav ul li a {
       color: #ccc;
       text-decoration: none;
@@ -60,6 +61,34 @@
       color: #fff;
     }
 
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      z-index: 999;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px;
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #444;
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
     .mode-toggle {
       position: absolute;
       top: 10px;
@@ -67,7 +96,7 @@
     }
 
     .mode-toggle button {
-      background-color: var(--btn-bg);
+      background-color: #444;
       color: white;
       border: none;
       padding: 8px 12px;
@@ -77,7 +106,7 @@
     }
 
     .mode-toggle button:hover {
-      background-color: var(--btn-hover);
+      background-color: #666;
     }
 
     .section {
@@ -104,27 +133,36 @@
       transform: translateY(-6px);
     }
 
-    .card h2 {
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #aaa;
-      font-size: 0.95rem;
-    }
-
-    .btn {
-      margin-top: 15px;
-      padding: 10px 16px;
-      background-color: var(--btn-bg);
-      color: #fff;
+    .btn, .primary-btn {
+      background-color: #e64500;
+      color: white;
       border: none;
-      border-radius: 5px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
       cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      text-decoration: none;
     }
 
-    .btn:hover {
-      background-color: var(--btn-hover);
+    .btn:hover, .primary-btn:hover {
+      background-color: rgb(100, 211, 196);
+    }
+
+    .wishlist-btn {
+      background-color: transparent;
+      border: 2px solid #00bcd4;
+      color: #00bcd4;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .wishlist-btn:hover {
+      background-color: #00bcd4;
+      color: white;
     }
 
     .product-form input {
@@ -142,6 +180,13 @@
       background-color: #222;
       color: #aaa;
     }
+
+    .product-card img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
   </style>
 </head>
 
@@ -158,20 +203,20 @@
         <li class="dropdown">
           <a href="#products">Products</a>
           <div class="dropdown-content">
-            <p><a href="mobiles.electronics.html">Mobiles & Electronics</a></p>
-            <p><a href="Fashion.html">Fashion</a></p>
-            <p><a href="Kitchen.html">Home & Kitchen</a></p>
-            <p><a href="Beauty.html">Beauty & Personal Care</a></p>
-            <p><a href="Grocery.html">Grocery & Gourmet</a></p>
-            <p><a href="Toys.html">Toys, Kids & Baby Products</a></p>
-            <p><a href="sports.html">Sports, Fitness & Outdoors</a></p>
-            <p><a href="Automotive.html">Automotive</a></p>
-            <p><a href="Books.html">Books & Audible</a></p>
-            <p><a href="jewelry.html">Jewelry & Watches</a></p>
-            <p><a href="music.html">Music, Movies & Gaming</a></p>
-            <p><a href="art.html">Handmade & Art</a></p>
-        </div>
-      </li>
+            <a href="mobiles.electronics.html">Mobiles & Electronics</a>
+            <a href="Fashion.html">Fashion</a>
+            <a href="Kitchen.html">Home & Kitchen</a>
+            <a href="Beauty.html">Beauty & Personal Care</a>
+            <a href="Grocery.html">Grocery & Gourmet</a>
+            <a href="Toys.html">Toys, Kids & Baby Products</a>
+            <a href="sports.html">Sports, Fitness & Outdoors</a>
+            <a href="Automotive.html">Automotive</a>
+            <a href="Books.html">Books & Audible</a>
+            <a href="jewelry.html">Jewelry & Watches</a>
+            <a href="music.html">Music, Movies & Gaming</a>
+            <a href="art.html">Handmade & Art</a>
+          </div>
+        </li>
         <li><a href="index.html#delivery">Delivery</a></li>
         <li><a href="retailerchat.html">Chat</a></li>
         <li><a href="cart.html">Cart</a></li>
@@ -203,7 +248,7 @@
       </div>
     </div>
 
-    <div id="seller-dashboard-content" class="dashboard-content"></div>
+    <div id="seller-dashboard-content" class="dashboard-content" style="margin-top: 40px;"></div>
   </main>
 
   <footer>
@@ -211,6 +256,8 @@
   </footer>
 
   <script>
+    let productList = [];
+
     function showSellerSection(section) {
       const content = document.getElementById('seller-dashboard-content');
       let html = '';
@@ -218,34 +265,59 @@
       if (section === 'add-product') {
         html = `
           <h2>Add New Product</h2>
-          <form class="product-form">
-            <label>Product Name:</label>
-            <input type="text" placeholder="Enter product name" />
-            
-            <label>Price (₹):</label>
-            <input type="number" placeholder="Enter price" />
-            
-            <label>Image URL:</label>
-            <input type="text" placeholder="Enter image URL" />
-            
+          <form class="product-form" onsubmit="handleProductSubmit(event)">
+            <label for="name">Product Name:</label>
+            <input type="text" id="name" placeholder="Enter product name" required />
+
+            <label for="price">Price (₹):</label>
+            <input type="number" id="price" placeholder="Enter price" required />
+
+            <label for="img">Image URL:</label>
+            <input type="text" id="img" placeholder="Enter image URL" required />
+
             <button class="btn" type="submit">Add Product</button>
           </form>
         `;
       } else if (section === 'view-orders') {
-        html = `
-          <h2>Orders</h2>
-          <p>No new orders yet!</p>
-        `;
+        html = `<h2>Orders</h2><p>No new orders yet!</p>`;
       } else if (section === 'manage-products') {
-        html = `
-          <h2>Manage Products</h2>
-          <p>You currently have no products listed.</p>
-        `;
+        if (productList.length === 0) {
+          html = `<h2>Manage Products</h2><p>No products added yet.</p>`;
+        } else {
+          html = `<h2>Manage Products</h2><div class="dashboard">`;
+          productList.forEach((product, index) => {
+            html += `
+              <div class="card product-card">
+                <img src="${product.img}" alt="${product.name}" />
+                <h3>${product.name}</h3>
+                <p>Price: ₹${product.price}</p>
+                <button class="wishlist-btn" onclick="deleteProduct(${index})">❌ Remove</button>
+              </div>
+            `;
+          });
+          html += `</div>`;
+        }
       }
 
       content.innerHTML = html;
     }
 
+    function handleProductSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const price = document.getElementById('price').value;
+      const img = document.getElementById('img').value;
+
+      productList.push({ name, price, img });
+
+      alert('Product added successfully!');
+      document.querySelector('.product-form').reset();
+    }
+
+    function deleteProduct(index) {
+      productList.splice(index, 1);
+      showSellerSection('manage-products');
+    }
     function toggleMode() {
       document.body.classList.toggle('light');
     }

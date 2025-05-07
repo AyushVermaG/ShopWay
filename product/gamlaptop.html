@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ShopWay - Wireless Headphones with Bluetooth, Deep Bass & Modern Design. Rated 4.2/5 by 1245 customers.">
-  <title>Product Page - Wireless Headphones - ShopWay</title>
+  <meta name="description" content="ShopWay - Gaming Laptop with High Performance. Rated 4.6/5 by 1,248 customers.">
+  <title>Product Page - Gaming Laptop - ShopWay</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
@@ -35,15 +35,10 @@
       gap: 1.5rem;
     }
 
-    nav .nav-links li {
-      position: relative;
-    }
-
     nav .nav-links a {
       color: #e0e0e0;
       text-decoration: none;
       padding: 0.5rem 1rem;
-      display: block;
       font-size: 1rem;
       transition: color 0.3s ease;
     }
@@ -70,7 +65,7 @@
 
     .product-image img {
       width: 100%;
-      max-width: 300px;
+      max-width: 350px;
       height: auto;
       object-fit: cover;
       border-radius: 10px;
@@ -92,11 +87,6 @@
       font-size: 1.8rem;
       margin-bottom: 0.5rem;
       color: #ff5722;
-      transition: color 0.3s ease;
-    }
-
-    .product-details h1:hover {
-      color: #76ff03;
     }
 
     .product-details p {
@@ -185,44 +175,40 @@
     }
 
     .hidden {
-  display: none;
-}
-
+      display: none;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">ShopWay</div>
     <nav>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="cart.html">Cart</a></li>
+        <li><a href="#cart">Cart</a></li>
         <li><a href="Chat.html">Chat with Retailer</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Product Info Section -->
   <div class="product-container">
     <div class="product-image">
-      <img src="https://img.freepik.com/free-photo/still-life-wireless-cyberpunk-headphones_23-2151072227.jpg?semt=ais_hybrid&w=740" alt="Wireless Headphones">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsmQHmmXbmbrV1o5cKcS3Bqp05T3BuEws-8g&s" alt="Gaming Laptop">
     </div>
 
     <div class="product-details">
       <div>
-        <h1>Wireless Headphones</h1>
-        <div class="star-rating" aria-label="Rated 4.2 out of 5 stars">⭐⭐⭐⭐☆ (4.2/5 based on 1,245 reviews)</div>
-        <div class="price">₹2,499</div>
+        <h1>Gaming Laptop</h1>
+        <div class="star-rating">⭐⭐⭐⭐⭐ (4.6/5 based on 1,248 reviews)</div>
+        <div class="price">₹59,000</div>
         <p>
-          These wireless headphones offer high-quality sound with deep bass, built-in Bluetooth for easy connection, and a sleek design.
-          Perfect for music lovers and gamers alike.
+          Elevate your gaming experience with this high-performance gaming laptop featuring an Intel i5 processor, NVIDIA GTX graphics, 16GB RAM, and a 512GB SSD. Perfect for AAA titles and multitasking.
         </p>
       </div>
 
       <div class="buttons">
-        <button class="btn" onclick="addToCart('Bluetooth Speaker')">Add to Cart</button>
+        <button class="btn" onclick="addToCart('Gaming Laptop')">Add to Cart</button>
         <button class="primary-btn" onclick="buyNow()">Buy Now</button>
         <a href="Chat.html" class="btn" style="text-decoration: none; display: inline-block;">Chat with Retailer</a>
       </div>
@@ -233,52 +219,46 @@
           <option value="standard">Standard (3-5 days)</option>
           <option value="express">Express (1-2 days)</option>
           <option value="overnight">Overnight</option>
-        </select>
-        <br><br>
+        </select><br><br>
         <button class="btn" id="proceedToPayment">Proceed to Payment</button>
       </div>
-      
+
       <div id="paymentGateway" class="hidden dashboard-content">
         <h3>Choose Payment Method:</h3>
-        <input type="radio" name="payment" value="credit" checked> Credit Card<br>
-        <input type="radio" name="payment" value="debit"> Debit Card<br>
-        <input type="radio" name="payment" value="upi"> UPI<br>
-        <input type="radio" name="payment" value="debit"> Cash On Delivery<br>
+        <input type="radio" name="payment" value="credit" id="credit"> <label for="credit">Credit Card</label><br>
+        <input type="radio" name="payment" value="debit" id="debit"> <label for="debit">Debit Card</label><br>
+        <input type="radio" name="payment" value="upi" id="upi"> <label for="upi">UPI</label><br>
+        <input type="radio" name="payment" value="cod" id="cod"> <label for="cod">Cash On Delivery</label><br>
         <button class="btn" id="payNow">Confirm Order</button>
       </div>
-      
+
       <div id="orderConfirmation" class="hidden dashboard-content">
         <h3>Order Confirmed!</h3>
         <p>Your order has been placed successfully.</p>
       </div>
-      
-      
     </div>
   </div>
 
-  <!-- Reviews Section -->
   <div class="reviews-section">
     <h2>Customer Reviews</h2>
 
     <div id="reviewList">
       <div class="dashboard-content">
-        <h3>Adarsh <span class="star-rating">⭐️⭐️⭐️⭐️</span></h3>
-        <p>Great sound quality and noise cancellation. Comfortable for long listening sessions.</p>
+        <h3>Arjun <span class="star-rating">⭐️⭐️⭐️⭐️⭐️</span></h3>
+        <p>Flawless performance, handles all games smoothly. Very satisfied!</p>
       </div>
 
       <div class="dashboard-content">
-        <h3>Aman <span class="star-rating">⭐️⭐️⭐️</span></h3>
-        <p>The headphones are good but could have better battery life. Overall, decent quality.</p>
+        <h3>Neha <span class="star-rating">⭐️⭐️⭐️⭐️</span></h3>
+        <p>Good build quality and amazing graphics. Totally worth the price.</p>
       </div>
     </div>
 
-    <!-- Review Form -->
     <div class="dashboard-content">
       <h3>Add Your Review</h3>
       <form onsubmit="submitReview(); return false;">
         <input type="text" placeholder="Your Name" id="reviewerName" required>
         <textarea placeholder="Write your review..." id="reviewText" rows="4" required></textarea>
-
         <label for="starRating" style="color:#ccc;">Your Rating:</label>
         <select id="starRating" required>
           <option value="">--Select--</option>
@@ -288,39 +268,33 @@
           <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
           <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
         </select>
-
         <p id="formMessage" style="color: #ff5722; font-size: 0.9rem;"></p>
         <button class="btn" type="submit">Submit Review</button>
       </form>
     </div>
   </div>
 
-  <!-- JavaScript -->
   <script>
     function addToCart(product) {
       alert(product + " added to cart!");
     }
 
     function buyNow() {
-  document.getElementById("deliveryOptions").classList.remove("hidden");
-  document.querySelector(".primary-btn").classList.add("hidden");
-}
+      document.getElementById("deliveryOptions").classList.remove("hidden");
+      document.querySelector(".primary-btn").classList.add("hidden");
+    }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const proceedToPayment = document.getElementById("proceedToPayment");
-  const payNow = document.getElementById("payNow");
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("proceedToPayment").addEventListener("click", () => {
+        document.getElementById("deliveryOptions").classList.add("hidden");
+        document.getElementById("paymentGateway").classList.remove("hidden");
+      });
 
-  proceedToPayment.addEventListener("click", () => {
-    document.getElementById("deliveryOptions").classList.add("hidden");
-    document.getElementById("paymentGateway").classList.remove("hidden");
-  });
-
-  payNow.addEventListener("click", () => {
-    document.getElementById("paymentGateway").classList.add("hidden");
-    document.getElementById("orderConfirmation").classList.remove("hidden");
-  });
-});
-
+      document.getElementById("payNow").addEventListener("click", () => {
+        document.getElementById("paymentGateway").classList.add("hidden");
+        document.getElementById("orderConfirmation").classList.remove("hidden");
+      });
+    });
 
     function submitReview() {
       const name = document.getElementById('reviewerName').value.trim();
@@ -337,7 +311,6 @@ document.addEventListener("DOMContentLoaded", function () {
       addReviewToPage(newReview);
       saveReviewToLocal(newReview);
 
-      // Reset form
       document.getElementById('reviewerName').value = "";
       document.getElementById('reviewText').value = "";
       document.getElementById('starRating').value = "";
@@ -355,19 +328,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function saveReviewToLocal(review) {
-      let reviews = JSON.parse(localStorage.getItem('shopwayReviews') || '[]');
+      let reviews = JSON.parse(localStorage.getItem('shopwayReviewsLaptop') || '[]');
       reviews.push(review);
-      localStorage.setItem('shopwayReviews', JSON.stringify(reviews));
+      localStorage.setItem('shopwayReviewsLaptop', JSON.stringify(reviews));
     }
 
     function loadSavedReviews() {
-      let reviews = JSON.parse(localStorage.getItem('shopwayReviews') || '[]');
+      let reviews = JSON.parse(localStorage.getItem('shopwayReviewsLaptop') || '[]');
       reviews.forEach(addReviewToPage);
     }
 
     window.onload = loadSavedReviews;
   </script>
-  <script src="cart.js"></script>
-
 </body>
 </html>
